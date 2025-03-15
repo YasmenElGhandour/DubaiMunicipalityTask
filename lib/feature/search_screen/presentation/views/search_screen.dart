@@ -26,7 +26,7 @@ class SearchScreen extends StatelessWidget {
               per_page: ConstantStrings.PERPAGE),
         )),
       child: Scaffold(
-        appBar: AppBar(elevation: 0, toolbarHeight: 0, backgroundColor: ColorsPalette.PrimaryColor),
+        appBar: AppBar(elevation: 0,scrolledUnderElevation:0, toolbarHeight: 0, backgroundColor: ColorsPalette.PrimaryColor),
         backgroundColor: ColorsPalette.WhiteColor,
         body: SafeArea(
           child: Column(

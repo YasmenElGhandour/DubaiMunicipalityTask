@@ -26,8 +26,11 @@ The app allows you to:
 - Injectable: A dependency injection library used to manage and inject dependencies into various parts of the application.
 - ScreenUtil: A utility for adapting the screen size to different devices, ensuring a consistent UI across various screen sizes.
 - Flutter SVG: A library for rendering SVG images in Flutter applications, providing a flexible and scalable image solution.
-- Env: A library for securing client_id , client_secret and base_url
+- Env: A library for securing client_id , client_secret and base_url.
+- Mockito: A popular mocking framework used for creating mock objects in unit testing.
+- bloc_test: A testing library that provides utilities to test BLoC (Business Logic Component) states in Flutter applications.
 - Clean Architecture: Ensures modularity and scalability of the app.
+
 
 
 ##  Getting Started

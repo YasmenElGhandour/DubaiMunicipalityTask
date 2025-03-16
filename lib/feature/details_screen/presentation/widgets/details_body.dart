@@ -16,39 +16,43 @@ class DetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.all(16.0.sp),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DetailsAppBar(title : resultsModel?.events?[0].title ?? ""),
-            SizedBox(
-              height: 8.h,
+    return Padding(
+      padding: EdgeInsets.all(16.0.sp),
+      child: Column(
+        children: [
+          DetailsAppBar(title : resultsModel?.events?[0].title ?? ""),
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 8.h,
+                ),
+                EventListDivider(),
+                SizedBox(
+                  height: 8.h,
+                ),
+                DetailsImg(imageUrl: resultsModel?.events?[0].performers?[0].images?.huge ?? "",),
+                SizedBox(
+                  height: 8.h,
+                ),
+                EventTitle(formatDateString( resultsModel?.events?[0].datetimeLocal ?? ""),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.sp,
+                        color: ColorsPalette.BlackColor)),
+                SizedBox(
+                  height: 8.h,
+                ),
+                EventTitle("${resultsModel?.events?[0].venue?.displayLocation ?? ""}",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14.sp,
+                        color: ColorsPalette.DarkGrayColor)),
+              ],
             ),
-            EventListDivider(),
-            SizedBox(
-              height: 8.h,
-            ),
-            DetailsImg(imageUrl: resultsModel?.events?[0].performers?[0].images?.huge ?? "",),
-            SizedBox(
-              height: 8.h,
-            ),
-            EventTitle(formatDateString( resultsModel?.events?[0].datetimeLocal ?? ""),
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
-                    color: ColorsPalette.BlackColor)),
-            SizedBox(
-              height: 8.h,
-            ),
-            EventTitle("${resultsModel?.events?[0].venue?.displayLocation ?? ""}",
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14.sp,
-                    color: ColorsPalette.DarkGrayColor)),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

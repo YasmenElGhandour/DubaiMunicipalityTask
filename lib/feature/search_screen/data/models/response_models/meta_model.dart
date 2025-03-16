@@ -9,6 +9,7 @@ class MetaModel with _$MetaModel {
     int? total,
     int? took,
     int? page,
+    @JsonKey(name:"per_page" )
     int? perPage,
     dynamic geolocation,
   }) = _MetaModel;

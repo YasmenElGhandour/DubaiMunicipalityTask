@@ -8,15 +8,15 @@ part of 'events_model.dart';
 
 _$EventsModelImpl _$$EventsModelImplFromJson(Map<String, dynamic> json) =>
     _$EventsModelImpl(
-      accessMethod: json['accessMethod'],
-      announceDate: json['announceDate'] as String?,
+      accessMethod: json['access_method'],
+      announceDate: json['announce_date'] as String?,
       announcements: json['announcements'] == null
           ? null
           : AnnouncementsModel.fromJson(
               json['announcements'] as Map<String, dynamic>),
       conditional: json['conditional'] as bool?,
       contingent: json['contingent'] as bool?,
-      createdAt: json['createdAt'] as String?,
+      createdAt: json['created_at'] as String?,
       dateTbd: json['date_tbd'] as bool?,
       datetimeLocal: json['datetime_local'] as String?,
       datetimeTbd: json['datetime_tbd'] as bool?,
@@ -28,20 +28,20 @@ _$EventsModelImpl _$$EventsModelImplFromJson(Map<String, dynamic> json) =>
       homeGameNumber: (json['home_game_number'] as num?)?.toInt(),
       id: (json['id'] as num?)?.toInt(),
       integrated: json['integrated'],
-      isOpen: json['isOpen'] as bool?,
-      isVisible: json['isVisible'] as bool?,
-      isVisibleOverride: json['isVisibleOverride'] as String?,
+      isOpen: json['is_open'] as bool?,
+      isVisible: json['is_visible'] as bool?,
+      isVisibleOverride: json['is_visible_override'] as String?,
       links: json['links'] as List<dynamic>?,
       performers: (json['performers'] as List<dynamic>?)
           ?.map((e) => PerformersModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      performerOrder: (json['performerOrder'] as List<dynamic>?)
+      performerOrder: (json['performer_order'] as List<dynamic>?)
           ?.map((e) => PerformerOrderModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       playoffs: json['playoffs'],
       popularity: (json['popularity'] as num?)?.toInt(),
       score: (json['score'] as num?)?.toInt(),
-      shortTitle: json['shortTitle'] as String?,
+      shortTitle: json['short_title'] as String?,
       stats: json['stats'] == null
           ? null
           : AnnouncementsModel.fromJson(json['stats'] as Map<String, dynamic>),
@@ -49,31 +49,31 @@ _$EventsModelImpl _$$EventsModelImplFromJson(Map<String, dynamic> json) =>
       taxonomies: (json['taxonomies'] as List<dynamic>?)
           ?.map((e) => TaxonomiesModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      tdcPvId: (json['tdcPvId'] as num?)?.toInt(),
-      tdcPvoId: (json['tdcPvoId'] as num?)?.toInt(),
-      timeTbd: json['timeTbd'] as bool?,
+      tdcPvId: (json['tdc_pv_id'] as num?)?.toInt(),
+      tdcPvoId: (json['tdc_pvo_id'] as num?)?.toInt(),
+      timeTbd: json['time_tbd'] as bool?,
       title: json['title'] as String?,
       url: json['url'] as String?,
       venue: json['venue'] == null
           ? null
           : VenueModel.fromJson(json['venue'] as Map<String, dynamic>),
-      visibleAt: json['visibleAt'],
-      visibleUntilUtc: json['visibleUntilUtc'] as String?,
-      openDomainId: json['openDomainId'] as String?,
-      openId: json['openId'] as String?,
+      visibleAt: json['visible_at'],
+      visibleUntilUtc: json['visible_until_utc'] as String?,
+      openDomainId: json['open_domain_id'] as String?,
+      openId: json['open_id'] as String?,
       type: json['type'] as String?,
       themes: json['themes'] as List<dynamic>?,
-      domainInformation: json['domainInformation'] as List<dynamic>?,
+      domainInformation: json['domain_information'] as List<dynamic>?,
     );
 
 Map<String, dynamic> _$$EventsModelImplToJson(_$EventsModelImpl instance) =>
     <String, dynamic>{
-      'accessMethod': instance.accessMethod,
-      'announceDate': instance.announceDate,
+      'access_method': instance.accessMethod,
+      'announce_date': instance.announceDate,
       'announcements': instance.announcements,
       'conditional': instance.conditional,
       'contingent': instance.contingent,
-      'createdAt': instance.createdAt,
+      'created_at': instance.createdAt,
       'date_tbd': instance.dateTbd,
       'datetime_local': instance.datetimeLocal,
       'datetime_tbd': instance.datetimeTbd,
@@ -85,30 +85,30 @@ Map<String, dynamic> _$$EventsModelImplToJson(_$EventsModelImpl instance) =>
       'home_game_number': instance.homeGameNumber,
       'id': instance.id,
       'integrated': instance.integrated,
-      'isOpen': instance.isOpen,
-      'isVisible': instance.isVisible,
-      'isVisibleOverride': instance.isVisibleOverride,
+      'is_open': instance.isOpen,
+      'is_visible': instance.isVisible,
+      'is_visible_override': instance.isVisibleOverride,
       'links': instance.links,
       'performers': instance.performers,
-      'performerOrder': instance.performerOrder,
+      'performer_order': instance.performerOrder,
       'playoffs': instance.playoffs,
       'popularity': instance.popularity,
       'score': instance.score,
-      'shortTitle': instance.shortTitle,
+      'short_title': instance.shortTitle,
       'stats': instance.stats,
       'status': instance.status,
       'taxonomies': instance.taxonomies,
-      'tdcPvId': instance.tdcPvId,
-      'tdcPvoId': instance.tdcPvoId,
-      'timeTbd': instance.timeTbd,
+      'tdc_pv_id': instance.tdcPvId,
+      'tdc_pvo_id': instance.tdcPvoId,
+      'time_tbd': instance.timeTbd,
       'title': instance.title,
       'url': instance.url,
       'venue': instance.venue,
-      'visibleAt': instance.visibleAt,
-      'visibleUntilUtc': instance.visibleUntilUtc,
-      'openDomainId': instance.openDomainId,
-      'openId': instance.openId,
+      'visible_at': instance.visibleAt,
+      'visible_until_utc': instance.visibleUntilUtc,
+      'open_domain_id': instance.openDomainId,
+      'open_id': instance.openId,
       'type': instance.type,
       'themes': instance.themes,
-      'domainInformation': instance.domainInformation,
+      'domain_information': instance.domainInformation,
     };

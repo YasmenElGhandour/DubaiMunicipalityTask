@@ -11,7 +11,7 @@ _$MetaModelImpl _$$MetaModelImplFromJson(Map<String, dynamic> json) =>
       total: (json['total'] as num?)?.toInt(),
       took: (json['took'] as num?)?.toInt(),
       page: (json['page'] as num?)?.toInt(),
-      perPage: (json['perPage'] as num?)?.toInt(),
+      perPage: (json['per_page'] as num?)?.toInt(),
       geolocation: json['geolocation'],
     );
 
@@ -20,6 +20,6 @@ Map<String, dynamic> _$$MetaModelImplToJson(_$MetaModelImpl instance) =>
       'total': instance.total,
       'took': instance.took,
       'page': instance.page,
-      'perPage': instance.perPage,
+      'per_page': instance.perPage,
       'geolocation': instance.geolocation,
     };

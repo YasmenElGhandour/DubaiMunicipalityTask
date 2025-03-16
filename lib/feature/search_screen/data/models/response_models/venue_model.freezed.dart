@@ -22,6 +22,7 @@ VenueModel _$VenueModelFromJson(Map<String, dynamic> json) {
 mixin _$VenueModel {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "name_v2")
   String? get nameV2 => throw _privateConstructorUsedError;
   @JsonKey(name: "postal_code")
   String? get postalCode => throw _privateConstructorUsedError;
@@ -70,7 +71,7 @@ abstract class $VenueModelCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      String? nameV2,
+      @JsonKey(name: "name_v2") String? nameV2,
       @JsonKey(name: "postal_code") String? postalCode,
       String? timezone,
       double? score,
@@ -256,7 +257,7 @@ abstract class _$$VenueModelImplCopyWith<$Res>
   $Res call(
       {int? id,
       String? name,
-      String? nameV2,
+      @JsonKey(name: "name_v2") String? nameV2,
       @JsonKey(name: "postal_code") String? postalCode,
       String? timezone,
       double? score,
@@ -422,7 +423,7 @@ class _$VenueModelImpl implements _VenueModel {
   const _$VenueModelImpl(
       {this.id,
       this.name,
-      this.nameV2,
+      @JsonKey(name: "name_v2") this.nameV2,
       @JsonKey(name: "postal_code") this.postalCode,
       this.timezone,
       this.score,
@@ -453,6 +454,7 @@ class _$VenueModelImpl implements _VenueModel {
   @override
   final String? name;
   @override
+  @JsonKey(name: "name_v2")
   final String? nameV2;
   @override
   @JsonKey(name: "postal_code")
@@ -606,7 +608,7 @@ abstract class _VenueModel implements VenueModel {
   const factory _VenueModel(
           {final int? id,
           final String? name,
-          final String? nameV2,
+          @JsonKey(name: "name_v2") final String? nameV2,
           @JsonKey(name: "postal_code") final String? postalCode,
           final String? timezone,
           final double? score,
@@ -637,6 +639,7 @@ abstract class _VenueModel implements VenueModel {
   @override
   String? get name;
   @override
+  @JsonKey(name: "name_v2")
   String? get nameV2;
   @override
   @JsonKey(name: "postal_code")

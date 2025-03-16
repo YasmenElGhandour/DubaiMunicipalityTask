@@ -22,7 +22,9 @@ TaxonomiesModel _$TaxonomiesModelFromJson(Map<String, dynamic> json) {
 mixin _$TaxonomiesModel {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "parent_id")
   int? get parentId => throw _privateConstructorUsedError;
+  @JsonKey(name: "seo_event_type")
   String? get seoEventType => throw _privateConstructorUsedError;
   int? get rank => throw _privateConstructorUsedError;
   DocumentSourceModel? get documentSource => throw _privateConstructorUsedError;
@@ -46,8 +48,8 @@ abstract class $TaxonomiesModelCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      int? parentId,
-      String? seoEventType,
+      @JsonKey(name: "parent_id") int? parentId,
+      @JsonKey(name: "seo_event_type") String? seoEventType,
       int? rank,
       DocumentSourceModel? documentSource});
 
@@ -130,8 +132,8 @@ abstract class _$$TaxonomiesModelImplCopyWith<$Res>
   $Res call(
       {int? id,
       String? name,
-      int? parentId,
-      String? seoEventType,
+      @JsonKey(name: "parent_id") int? parentId,
+      @JsonKey(name: "seo_event_type") String? seoEventType,
       int? rank,
       DocumentSourceModel? documentSource});
 
@@ -194,8 +196,8 @@ class _$TaxonomiesModelImpl implements _TaxonomiesModel {
   const _$TaxonomiesModelImpl(
       {this.id,
       this.name,
-      this.parentId,
-      this.seoEventType,
+      @JsonKey(name: "parent_id") this.parentId,
+      @JsonKey(name: "seo_event_type") this.seoEventType,
       this.rank,
       this.documentSource});
 
@@ -207,8 +209,10 @@ class _$TaxonomiesModelImpl implements _TaxonomiesModel {
   @override
   final String? name;
   @override
+  @JsonKey(name: "parent_id")
   final int? parentId;
   @override
+  @JsonKey(name: "seo_event_type")
   final String? seoEventType;
   @override
   final int? rank;
@@ -262,8 +266,8 @@ abstract class _TaxonomiesModel implements TaxonomiesModel {
   const factory _TaxonomiesModel(
       {final int? id,
       final String? name,
-      final int? parentId,
-      final String? seoEventType,
+      @JsonKey(name: "parent_id") final int? parentId,
+      @JsonKey(name: "seo_event_type") final String? seoEventType,
       final int? rank,
       final DocumentSourceModel? documentSource}) = _$TaxonomiesModelImpl;
 
@@ -275,8 +279,10 @@ abstract class _TaxonomiesModel implements TaxonomiesModel {
   @override
   String? get name;
   @override
+  @JsonKey(name: "parent_id")
   int? get parentId;
   @override
+  @JsonKey(name: "seo_event_type")
   String? get seoEventType;
   @override
   int? get rank;

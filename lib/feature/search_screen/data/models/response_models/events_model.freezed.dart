@@ -20,11 +20,14 @@ EventsModel _$EventsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$EventsModel {
+  @JsonKey(name: "access_method")
   dynamic get accessMethod => throw _privateConstructorUsedError;
+  @JsonKey(name: "announce_date")
   String? get announceDate => throw _privateConstructorUsedError;
   AnnouncementsModel? get announcements => throw _privateConstructorUsedError;
   bool? get conditional => throw _privateConstructorUsedError;
   bool? get contingent => throw _privateConstructorUsedError;
+  @JsonKey(name: "created_at")
   String? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: "date_tbd")
   bool? get dateTbd => throw _privateConstructorUsedError;
@@ -44,32 +47,45 @@ mixin _$EventsModel {
   int? get homeGameNumber => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   dynamic get integrated => throw _privateConstructorUsedError;
+  @JsonKey(name: "is_open")
   bool? get isOpen => throw _privateConstructorUsedError;
+  @JsonKey(name: "is_visible")
   bool? get isVisible => throw _privateConstructorUsedError;
+  @JsonKey(name: "is_visible_override")
   String? get isVisibleOverride => throw _privateConstructorUsedError;
   List<dynamic>? get links => throw _privateConstructorUsedError;
   List<PerformersModel>? get performers => throw _privateConstructorUsedError;
+  @JsonKey(name: "performer_order")
   List<PerformerOrderModel>? get performerOrder =>
       throw _privateConstructorUsedError;
   dynamic get playoffs => throw _privateConstructorUsedError;
   int? get popularity => throw _privateConstructorUsedError;
   int? get score => throw _privateConstructorUsedError;
+  @JsonKey(name: "short_title")
   String? get shortTitle => throw _privateConstructorUsedError;
   AnnouncementsModel? get stats => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
   List<TaxonomiesModel>? get taxonomies => throw _privateConstructorUsedError;
+  @JsonKey(name: "tdc_pv_id")
   int? get tdcPvId => throw _privateConstructorUsedError;
+  @JsonKey(name: "tdc_pvo_id")
   int? get tdcPvoId => throw _privateConstructorUsedError;
+  @JsonKey(name: "time_tbd")
   bool? get timeTbd => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   VenueModel? get venue => throw _privateConstructorUsedError;
+  @JsonKey(name: "visible_at")
   dynamic get visibleAt => throw _privateConstructorUsedError;
+  @JsonKey(name: "visible_until_utc")
   String? get visibleUntilUtc => throw _privateConstructorUsedError;
+  @JsonKey(name: "open_domain_id")
   String? get openDomainId => throw _privateConstructorUsedError;
+  @JsonKey(name: "open_id")
   String? get openId => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   List<dynamic>? get themes => throw _privateConstructorUsedError;
+  @JsonKey(name: "domain_information")
   List<dynamic>? get domainInformation => throw _privateConstructorUsedError;
 
   /// Serializes this EventsModel to a JSON map.
@@ -89,12 +105,12 @@ abstract class $EventsModelCopyWith<$Res> {
       _$EventsModelCopyWithImpl<$Res, EventsModel>;
   @useResult
   $Res call(
-      {dynamic accessMethod,
-      String? announceDate,
+      {@JsonKey(name: "access_method") dynamic accessMethod,
+      @JsonKey(name: "announce_date") String? announceDate,
       AnnouncementsModel? announcements,
       bool? conditional,
       bool? contingent,
-      String? createdAt,
+      @JsonKey(name: "created_at") String? createdAt,
       @JsonKey(name: "date_tbd") bool? dateTbd,
       @JsonKey(name: "datetime_local") String? datetimeLocal,
       @JsonKey(name: "datetime_tbd") bool? datetimeTbd,
@@ -106,32 +122,33 @@ abstract class $EventsModelCopyWith<$Res> {
       @JsonKey(name: "home_game_number") int? homeGameNumber,
       int? id,
       dynamic integrated,
-      bool? isOpen,
-      bool? isVisible,
-      String? isVisibleOverride,
+      @JsonKey(name: "is_open") bool? isOpen,
+      @JsonKey(name: "is_visible") bool? isVisible,
+      @JsonKey(name: "is_visible_override") String? isVisibleOverride,
       List<dynamic>? links,
       List<PerformersModel>? performers,
+      @JsonKey(name: "performer_order")
       List<PerformerOrderModel>? performerOrder,
       dynamic playoffs,
       int? popularity,
       int? score,
-      String? shortTitle,
+      @JsonKey(name: "short_title") String? shortTitle,
       AnnouncementsModel? stats,
       String? status,
       List<TaxonomiesModel>? taxonomies,
-      int? tdcPvId,
-      int? tdcPvoId,
-      bool? timeTbd,
+      @JsonKey(name: "tdc_pv_id") int? tdcPvId,
+      @JsonKey(name: "tdc_pvo_id") int? tdcPvoId,
+      @JsonKey(name: "time_tbd") bool? timeTbd,
       String? title,
       String? url,
       VenueModel? venue,
-      dynamic visibleAt,
-      String? visibleUntilUtc,
-      String? openDomainId,
-      String? openId,
+      @JsonKey(name: "visible_at") dynamic visibleAt,
+      @JsonKey(name: "visible_until_utc") String? visibleUntilUtc,
+      @JsonKey(name: "open_domain_id") String? openDomainId,
+      @JsonKey(name: "open_id") String? openId,
       String? type,
       List<dynamic>? themes,
-      List<dynamic>? domainInformation});
+      @JsonKey(name: "domain_information") List<dynamic>? domainInformation});
 
   $AnnouncementsModelCopyWith<$Res>? get announcements;
   $AnnouncementsModelCopyWith<$Res>? get stats;
@@ -425,12 +442,12 @@ abstract class _$$EventsModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic accessMethod,
-      String? announceDate,
+      {@JsonKey(name: "access_method") dynamic accessMethod,
+      @JsonKey(name: "announce_date") String? announceDate,
       AnnouncementsModel? announcements,
       bool? conditional,
       bool? contingent,
-      String? createdAt,
+      @JsonKey(name: "created_at") String? createdAt,
       @JsonKey(name: "date_tbd") bool? dateTbd,
       @JsonKey(name: "datetime_local") String? datetimeLocal,
       @JsonKey(name: "datetime_tbd") bool? datetimeTbd,
@@ -442,32 +459,33 @@ abstract class _$$EventsModelImplCopyWith<$Res>
       @JsonKey(name: "home_game_number") int? homeGameNumber,
       int? id,
       dynamic integrated,
-      bool? isOpen,
-      bool? isVisible,
-      String? isVisibleOverride,
+      @JsonKey(name: "is_open") bool? isOpen,
+      @JsonKey(name: "is_visible") bool? isVisible,
+      @JsonKey(name: "is_visible_override") String? isVisibleOverride,
       List<dynamic>? links,
       List<PerformersModel>? performers,
+      @JsonKey(name: "performer_order")
       List<PerformerOrderModel>? performerOrder,
       dynamic playoffs,
       int? popularity,
       int? score,
-      String? shortTitle,
+      @JsonKey(name: "short_title") String? shortTitle,
       AnnouncementsModel? stats,
       String? status,
       List<TaxonomiesModel>? taxonomies,
-      int? tdcPvId,
-      int? tdcPvoId,
-      bool? timeTbd,
+      @JsonKey(name: "tdc_pv_id") int? tdcPvId,
+      @JsonKey(name: "tdc_pvo_id") int? tdcPvoId,
+      @JsonKey(name: "time_tbd") bool? timeTbd,
       String? title,
       String? url,
       VenueModel? venue,
-      dynamic visibleAt,
-      String? visibleUntilUtc,
-      String? openDomainId,
-      String? openId,
+      @JsonKey(name: "visible_at") dynamic visibleAt,
+      @JsonKey(name: "visible_until_utc") String? visibleUntilUtc,
+      @JsonKey(name: "open_domain_id") String? openDomainId,
+      @JsonKey(name: "open_id") String? openId,
       String? type,
       List<dynamic>? themes,
-      List<dynamic>? domainInformation});
+      @JsonKey(name: "domain_information") List<dynamic>? domainInformation});
 
   @override
   $AnnouncementsModelCopyWith<$Res>? get announcements;
@@ -715,12 +733,12 @@ class __$$EventsModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$EventsModelImpl implements _EventsModel {
   const _$EventsModelImpl(
-      {this.accessMethod,
-      this.announceDate,
+      {@JsonKey(name: "access_method") this.accessMethod,
+      @JsonKey(name: "announce_date") this.announceDate,
       this.announcements,
       this.conditional,
       this.contingent,
-      this.createdAt,
+      @JsonKey(name: "created_at") this.createdAt,
       @JsonKey(name: "date_tbd") this.dateTbd,
       @JsonKey(name: "datetime_local") this.datetimeLocal,
       @JsonKey(name: "datetime_tbd") this.datetimeTbd,
@@ -732,31 +750,33 @@ class _$EventsModelImpl implements _EventsModel {
       @JsonKey(name: "home_game_number") this.homeGameNumber,
       this.id,
       this.integrated,
-      this.isOpen,
-      this.isVisible,
-      this.isVisibleOverride,
+      @JsonKey(name: "is_open") this.isOpen,
+      @JsonKey(name: "is_visible") this.isVisible,
+      @JsonKey(name: "is_visible_override") this.isVisibleOverride,
       final List<dynamic>? links,
       final List<PerformersModel>? performers,
+      @JsonKey(name: "performer_order")
       final List<PerformerOrderModel>? performerOrder,
       this.playoffs,
       this.popularity,
       this.score,
-      this.shortTitle,
+      @JsonKey(name: "short_title") this.shortTitle,
       this.stats,
       this.status,
       final List<TaxonomiesModel>? taxonomies,
-      this.tdcPvId,
-      this.tdcPvoId,
-      this.timeTbd,
+      @JsonKey(name: "tdc_pv_id") this.tdcPvId,
+      @JsonKey(name: "tdc_pvo_id") this.tdcPvoId,
+      @JsonKey(name: "time_tbd") this.timeTbd,
       this.title,
       this.url,
       this.venue,
-      this.visibleAt,
-      this.visibleUntilUtc,
-      this.openDomainId,
-      this.openId,
+      @JsonKey(name: "visible_at") this.visibleAt,
+      @JsonKey(name: "visible_until_utc") this.visibleUntilUtc,
+      @JsonKey(name: "open_domain_id") this.openDomainId,
+      @JsonKey(name: "open_id") this.openId,
       this.type,
       final List<dynamic>? themes,
+      @JsonKey(name: "domain_information")
       final List<dynamic>? domainInformation})
       : _links = links,
         _performers = performers,
@@ -769,8 +789,10 @@ class _$EventsModelImpl implements _EventsModel {
       _$$EventsModelImplFromJson(json);
 
   @override
+  @JsonKey(name: "access_method")
   final dynamic accessMethod;
   @override
+  @JsonKey(name: "announce_date")
   final String? announceDate;
   @override
   final AnnouncementsModel? announcements;
@@ -779,6 +801,7 @@ class _$EventsModelImpl implements _EventsModel {
   @override
   final bool? contingent;
   @override
+  @JsonKey(name: "created_at")
   final String? createdAt;
   @override
   @JsonKey(name: "date_tbd")
@@ -810,10 +833,13 @@ class _$EventsModelImpl implements _EventsModel {
   @override
   final dynamic integrated;
   @override
+  @JsonKey(name: "is_open")
   final bool? isOpen;
   @override
+  @JsonKey(name: "is_visible")
   final bool? isVisible;
   @override
+  @JsonKey(name: "is_visible_override")
   final String? isVisibleOverride;
   final List<dynamic>? _links;
   @override
@@ -837,6 +863,7 @@ class _$EventsModelImpl implements _EventsModel {
 
   final List<PerformerOrderModel>? _performerOrder;
   @override
+  @JsonKey(name: "performer_order")
   List<PerformerOrderModel>? get performerOrder {
     final value = _performerOrder;
     if (value == null) return null;
@@ -852,6 +879,7 @@ class _$EventsModelImpl implements _EventsModel {
   @override
   final int? score;
   @override
+  @JsonKey(name: "short_title")
   final String? shortTitle;
   @override
   final AnnouncementsModel? stats;
@@ -868,10 +896,13 @@ class _$EventsModelImpl implements _EventsModel {
   }
 
   @override
+  @JsonKey(name: "tdc_pv_id")
   final int? tdcPvId;
   @override
+  @JsonKey(name: "tdc_pvo_id")
   final int? tdcPvoId;
   @override
+  @JsonKey(name: "time_tbd")
   final bool? timeTbd;
   @override
   final String? title;
@@ -880,12 +911,16 @@ class _$EventsModelImpl implements _EventsModel {
   @override
   final VenueModel? venue;
   @override
+  @JsonKey(name: "visible_at")
   final dynamic visibleAt;
   @override
+  @JsonKey(name: "visible_until_utc")
   final String? visibleUntilUtc;
   @override
+  @JsonKey(name: "open_domain_id")
   final String? openDomainId;
   @override
+  @JsonKey(name: "open_id")
   final String? openId;
   @override
   final String? type;
@@ -901,6 +936,7 @@ class _$EventsModelImpl implements _EventsModel {
 
   final List<dynamic>? _domainInformation;
   @override
+  @JsonKey(name: "domain_information")
   List<dynamic>? get domainInformation {
     final value = _domainInformation;
     if (value == null) return null;
@@ -1058,12 +1094,12 @@ class _$EventsModelImpl implements _EventsModel {
 
 abstract class _EventsModel implements EventsModel {
   const factory _EventsModel(
-      {final dynamic accessMethod,
-      final String? announceDate,
+      {@JsonKey(name: "access_method") final dynamic accessMethod,
+      @JsonKey(name: "announce_date") final String? announceDate,
       final AnnouncementsModel? announcements,
       final bool? conditional,
       final bool? contingent,
-      final String? createdAt,
+      @JsonKey(name: "created_at") final String? createdAt,
       @JsonKey(name: "date_tbd") final bool? dateTbd,
       @JsonKey(name: "datetime_local") final String? datetimeLocal,
       @JsonKey(name: "datetime_tbd") final bool? datetimeTbd,
@@ -1075,39 +1111,43 @@ abstract class _EventsModel implements EventsModel {
       @JsonKey(name: "home_game_number") final int? homeGameNumber,
       final int? id,
       final dynamic integrated,
-      final bool? isOpen,
-      final bool? isVisible,
-      final String? isVisibleOverride,
+      @JsonKey(name: "is_open") final bool? isOpen,
+      @JsonKey(name: "is_visible") final bool? isVisible,
+      @JsonKey(name: "is_visible_override") final String? isVisibleOverride,
       final List<dynamic>? links,
       final List<PerformersModel>? performers,
+      @JsonKey(name: "performer_order")
       final List<PerformerOrderModel>? performerOrder,
       final dynamic playoffs,
       final int? popularity,
       final int? score,
-      final String? shortTitle,
+      @JsonKey(name: "short_title") final String? shortTitle,
       final AnnouncementsModel? stats,
       final String? status,
       final List<TaxonomiesModel>? taxonomies,
-      final int? tdcPvId,
-      final int? tdcPvoId,
-      final bool? timeTbd,
+      @JsonKey(name: "tdc_pv_id") final int? tdcPvId,
+      @JsonKey(name: "tdc_pvo_id") final int? tdcPvoId,
+      @JsonKey(name: "time_tbd") final bool? timeTbd,
       final String? title,
       final String? url,
       final VenueModel? venue,
-      final dynamic visibleAt,
-      final String? visibleUntilUtc,
-      final String? openDomainId,
-      final String? openId,
+      @JsonKey(name: "visible_at") final dynamic visibleAt,
+      @JsonKey(name: "visible_until_utc") final String? visibleUntilUtc,
+      @JsonKey(name: "open_domain_id") final String? openDomainId,
+      @JsonKey(name: "open_id") final String? openId,
       final String? type,
       final List<dynamic>? themes,
+      @JsonKey(name: "domain_information")
       final List<dynamic>? domainInformation}) = _$EventsModelImpl;
 
   factory _EventsModel.fromJson(Map<String, dynamic> json) =
       _$EventsModelImpl.fromJson;
 
   @override
+  @JsonKey(name: "access_method")
   dynamic get accessMethod;
   @override
+  @JsonKey(name: "announce_date")
   String? get announceDate;
   @override
   AnnouncementsModel? get announcements;
@@ -1116,6 +1156,7 @@ abstract class _EventsModel implements EventsModel {
   @override
   bool? get contingent;
   @override
+  @JsonKey(name: "created_at")
   String? get createdAt;
   @override
   @JsonKey(name: "date_tbd")
@@ -1147,16 +1188,20 @@ abstract class _EventsModel implements EventsModel {
   @override
   dynamic get integrated;
   @override
+  @JsonKey(name: "is_open")
   bool? get isOpen;
   @override
+  @JsonKey(name: "is_visible")
   bool? get isVisible;
   @override
+  @JsonKey(name: "is_visible_override")
   String? get isVisibleOverride;
   @override
   List<dynamic>? get links;
   @override
   List<PerformersModel>? get performers;
   @override
+  @JsonKey(name: "performer_order")
   List<PerformerOrderModel>? get performerOrder;
   @override
   dynamic get playoffs;
@@ -1165,6 +1210,7 @@ abstract class _EventsModel implements EventsModel {
   @override
   int? get score;
   @override
+  @JsonKey(name: "short_title")
   String? get shortTitle;
   @override
   AnnouncementsModel? get stats;
@@ -1173,10 +1219,13 @@ abstract class _EventsModel implements EventsModel {
   @override
   List<TaxonomiesModel>? get taxonomies;
   @override
+  @JsonKey(name: "tdc_pv_id")
   int? get tdcPvId;
   @override
+  @JsonKey(name: "tdc_pvo_id")
   int? get tdcPvoId;
   @override
+  @JsonKey(name: "time_tbd")
   bool? get timeTbd;
   @override
   String? get title;
@@ -1185,18 +1234,23 @@ abstract class _EventsModel implements EventsModel {
   @override
   VenueModel? get venue;
   @override
+  @JsonKey(name: "visible_at")
   dynamic get visibleAt;
   @override
+  @JsonKey(name: "visible_until_utc")
   String? get visibleUntilUtc;
   @override
+  @JsonKey(name: "open_domain_id")
   String? get openDomainId;
   @override
+  @JsonKey(name: "open_id")
   String? get openId;
   @override
   String? get type;
   @override
   List<dynamic>? get themes;
   @override
+  @JsonKey(name: "domain_information")
   List<dynamic>? get domainInformation;
 
   /// Create a copy of EventsModel

@@ -20,7 +20,9 @@ DocumentSourceModel _$DocumentSourceModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DocumentSourceModel {
+  @JsonKey(name: "source_type")
   String? get sourceType => throw _privateConstructorUsedError;
+  @JsonKey(name: "generation_type")
   String? get generationType => throw _privateConstructorUsedError;
 
   /// Serializes this DocumentSourceModel to a JSON map.
@@ -39,7 +41,9 @@ abstract class $DocumentSourceModelCopyWith<$Res> {
           DocumentSourceModel value, $Res Function(DocumentSourceModel) then) =
       _$DocumentSourceModelCopyWithImpl<$Res, DocumentSourceModel>;
   @useResult
-  $Res call({String? sourceType, String? generationType});
+  $Res call(
+      {@JsonKey(name: "source_type") String? sourceType,
+      @JsonKey(name: "generation_type") String? generationType});
 }
 
 /// @nodoc
@@ -81,7 +85,9 @@ abstract class _$$DocumentSourceModelImplCopyWith<$Res>
       __$$DocumentSourceModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? sourceType, String? generationType});
+  $Res call(
+      {@JsonKey(name: "source_type") String? sourceType,
+      @JsonKey(name: "generation_type") String? generationType});
 }
 
 /// @nodoc
@@ -116,14 +122,18 @@ class __$$DocumentSourceModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DocumentSourceModelImpl implements _DocumentSourceModel {
-  const _$DocumentSourceModelImpl({this.sourceType, this.generationType});
+  const _$DocumentSourceModelImpl(
+      {@JsonKey(name: "source_type") this.sourceType,
+      @JsonKey(name: "generation_type") this.generationType});
 
   factory _$DocumentSourceModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$DocumentSourceModelImplFromJson(json);
 
   @override
+  @JsonKey(name: "source_type")
   final String? sourceType;
   @override
+  @JsonKey(name: "generation_type")
   final String? generationType;
 
   @override
@@ -165,15 +175,18 @@ class _$DocumentSourceModelImpl implements _DocumentSourceModel {
 
 abstract class _DocumentSourceModel implements DocumentSourceModel {
   const factory _DocumentSourceModel(
-      {final String? sourceType,
-      final String? generationType}) = _$DocumentSourceModelImpl;
+          {@JsonKey(name: "source_type") final String? sourceType,
+          @JsonKey(name: "generation_type") final String? generationType}) =
+      _$DocumentSourceModelImpl;
 
   factory _DocumentSourceModel.fromJson(Map<String, dynamic> json) =
       _$DocumentSourceModelImpl.fromJson;
 
   @override
+  @JsonKey(name: "source_type")
   String? get sourceType;
   @override
+  @JsonKey(name: "generation_type")
   String? get generationType;
 
   /// Create a copy of DocumentSourceModel

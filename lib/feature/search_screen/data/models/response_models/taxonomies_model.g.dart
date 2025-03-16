@@ -11,8 +11,8 @@ _$TaxonomiesModelImpl _$$TaxonomiesModelImplFromJson(
     _$TaxonomiesModelImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      parentId: (json['parentId'] as num?)?.toInt(),
-      seoEventType: json['seoEventType'] as String?,
+      parentId: (json['parent_id'] as num?)?.toInt(),
+      seoEventType: json['seo_event_type'] as String?,
       rank: (json['rank'] as num?)?.toInt(),
       documentSource: json['documentSource'] == null
           ? null
@@ -25,8 +25,8 @@ Map<String, dynamic> _$$TaxonomiesModelImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'parentId': instance.parentId,
-      'seoEventType': instance.seoEventType,
+      'parent_id': instance.parentId,
+      'seo_event_type': instance.seoEventType,
       'rank': instance.rank,
       'documentSource': instance.documentSource,
     };

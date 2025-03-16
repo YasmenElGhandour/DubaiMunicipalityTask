@@ -15,23 +15,32 @@ class PerformersModel with _$PerformersModel {
     int? id,
     ImagesModel? images,
     dynamic divisions,
+    @JsonKey(name:"has_upcoming_events" )
     bool? hasUpcomingEvents,
     bool? primary,
     AnnouncementsModel? stats,
     List<TaxonomiesModel>? taxonomies,
+    @JsonKey(name:"image_attribution" )
     String? imageAttribution,
     String? url,
     double? score,
     String? slug,
+    @JsonKey(name:"home_venue_id" )
     dynamic homeVenueId,
+    @JsonKey(name:"short_name" )
     String? shortName,
+    @JsonKey(name:"num_upcoming_events" )
     int? numUpcomingEvents,
     dynamic colors,
+    @JsonKey(name:"image_license" )
     String? imageLicense,
     int? popularity,
+    @JsonKey(name:"home_team" )
     bool? homeTeam,
     dynamic location,
+    @JsonKey(name:"image_rights_message" )
     String? imageRightsMessage,
+    @JsonKey(name:"is_event" )
     bool? isEvent,
   }) = _PerformersModel;
 

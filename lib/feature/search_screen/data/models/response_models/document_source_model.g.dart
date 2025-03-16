@@ -9,13 +9,13 @@ part of 'document_source_model.dart';
 _$DocumentSourceModelImpl _$$DocumentSourceModelImplFromJson(
         Map<String, dynamic> json) =>
     _$DocumentSourceModelImpl(
-      sourceType: json['sourceType'] as String?,
-      generationType: json['generationType'] as String?,
+      sourceType: json['source_type'] as String?,
+      generationType: json['generation_type'] as String?,
     );
 
 Map<String, dynamic> _$$DocumentSourceModelImplToJson(
         _$DocumentSourceModelImpl instance) =>
     <String, dynamic>{
-      'sourceType': instance.sourceType,
-      'generationType': instance.generationType,
+      'source_type': instance.sourceType,
+      'generation_type': instance.generationType,
     };

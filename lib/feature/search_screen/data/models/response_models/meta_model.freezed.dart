@@ -23,6 +23,7 @@ mixin _$MetaModel {
   int? get total => throw _privateConstructorUsedError;
   int? get took => throw _privateConstructorUsedError;
   int? get page => throw _privateConstructorUsedError;
+  @JsonKey(name: "per_page")
   int? get perPage => throw _privateConstructorUsedError;
   dynamic get geolocation => throw _privateConstructorUsedError;
 
@@ -42,7 +43,11 @@ abstract class $MetaModelCopyWith<$Res> {
       _$MetaModelCopyWithImpl<$Res, MetaModel>;
   @useResult
   $Res call(
-      {int? total, int? took, int? page, int? perPage, dynamic geolocation});
+      {int? total,
+      int? took,
+      int? page,
+      @JsonKey(name: "per_page") int? perPage,
+      dynamic geolocation});
 }
 
 /// @nodoc
@@ -100,7 +105,11 @@ abstract class _$$MetaModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? total, int? took, int? page, int? perPage, dynamic geolocation});
+      {int? total,
+      int? took,
+      int? page,
+      @JsonKey(name: "per_page") int? perPage,
+      dynamic geolocation});
 }
 
 /// @nodoc
@@ -151,7 +160,11 @@ class __$$MetaModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MetaModelImpl implements _MetaModel {
   const _$MetaModelImpl(
-      {this.total, this.took, this.page, this.perPage, this.geolocation});
+      {this.total,
+      this.took,
+      this.page,
+      @JsonKey(name: "per_page") this.perPage,
+      this.geolocation});
 
   factory _$MetaModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MetaModelImplFromJson(json);
@@ -163,6 +176,7 @@ class _$MetaModelImpl implements _MetaModel {
   @override
   final int? page;
   @override
+  @JsonKey(name: "per_page")
   final int? perPage;
   @override
   final dynamic geolocation;
@@ -211,7 +225,7 @@ abstract class _MetaModel implements MetaModel {
       {final int? total,
       final int? took,
       final int? page,
-      final int? perPage,
+      @JsonKey(name: "per_page") final int? perPage,
       final dynamic geolocation}) = _$MetaModelImpl;
 
   factory _MetaModel.fromJson(Map<String, dynamic> json) =
@@ -224,6 +238,7 @@ abstract class _MetaModel implements MetaModel {
   @override
   int? get page;
   @override
+  @JsonKey(name: "per_page")
   int? get perPage;
   @override
   dynamic get geolocation;

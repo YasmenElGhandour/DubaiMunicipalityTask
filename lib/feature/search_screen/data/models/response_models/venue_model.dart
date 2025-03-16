@@ -9,6 +9,7 @@ class VenueModel with _$VenueModel {
   const factory VenueModel({
     int? id,
     String? name,
+    @JsonKey(name: "name_v2")
     String? nameV2,
     @JsonKey(name: "postal_code")
     String? postalCode,

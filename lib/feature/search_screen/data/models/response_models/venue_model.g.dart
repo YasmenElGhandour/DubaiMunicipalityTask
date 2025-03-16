@@ -10,7 +10,7 @@ _$VenueModelImpl _$$VenueModelImplFromJson(Map<String, dynamic> json) =>
     _$VenueModelImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      nameV2: json['nameV2'] as String?,
+      nameV2: json['name_v2'] as String?,
       postalCode: json['postal_code'] as String?,
       timezone: json['timezone'] as String?,
       score: (json['score'] as num?)?.toDouble(),
@@ -39,7 +39,7 @@ Map<String, dynamic> _$$VenueModelImplToJson(_$VenueModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'nameV2': instance.nameV2,
+      'name_v2': instance.nameV2,
       'postal_code': instance.postalCode,
       'timezone': instance.timezone,
       'score': instance.score,

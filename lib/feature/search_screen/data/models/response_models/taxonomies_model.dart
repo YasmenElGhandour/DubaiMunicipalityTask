@@ -9,7 +9,9 @@ class TaxonomiesModel with _$TaxonomiesModel {
   const factory TaxonomiesModel({
     int? id,
     String? name,
+    @JsonKey(name:"parent_id" )
     int? parentId,
+    @JsonKey(name:"seo_event_type" )
     String? seoEventType,
     int? rank,
     DocumentSourceModel? documentSource,

@@ -26,23 +26,32 @@ mixin _$PerformersModel {
   int? get id => throw _privateConstructorUsedError;
   ImagesModel? get images => throw _privateConstructorUsedError;
   dynamic get divisions => throw _privateConstructorUsedError;
+  @JsonKey(name: "has_upcoming_events")
   bool? get hasUpcomingEvents => throw _privateConstructorUsedError;
   bool? get primary => throw _privateConstructorUsedError;
   AnnouncementsModel? get stats => throw _privateConstructorUsedError;
   List<TaxonomiesModel>? get taxonomies => throw _privateConstructorUsedError;
+  @JsonKey(name: "image_attribution")
   String? get imageAttribution => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   double? get score => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
+  @JsonKey(name: "home_venue_id")
   dynamic get homeVenueId => throw _privateConstructorUsedError;
+  @JsonKey(name: "short_name")
   String? get shortName => throw _privateConstructorUsedError;
+  @JsonKey(name: "num_upcoming_events")
   int? get numUpcomingEvents => throw _privateConstructorUsedError;
   dynamic get colors => throw _privateConstructorUsedError;
+  @JsonKey(name: "image_license")
   String? get imageLicense => throw _privateConstructorUsedError;
   int? get popularity => throw _privateConstructorUsedError;
+  @JsonKey(name: "home_team")
   bool? get homeTeam => throw _privateConstructorUsedError;
   dynamic get location => throw _privateConstructorUsedError;
+  @JsonKey(name: "image_rights_message")
   String? get imageRightsMessage => throw _privateConstructorUsedError;
+  @JsonKey(name: "is_event")
   bool? get isEvent => throw _privateConstructorUsedError;
 
   /// Serializes this PerformersModel to a JSON map.
@@ -68,24 +77,24 @@ abstract class $PerformersModelCopyWith<$Res> {
       int? id,
       ImagesModel? images,
       dynamic divisions,
-      bool? hasUpcomingEvents,
+      @JsonKey(name: "has_upcoming_events") bool? hasUpcomingEvents,
       bool? primary,
       AnnouncementsModel? stats,
       List<TaxonomiesModel>? taxonomies,
-      String? imageAttribution,
+      @JsonKey(name: "image_attribution") String? imageAttribution,
       String? url,
       double? score,
       String? slug,
-      dynamic homeVenueId,
-      String? shortName,
-      int? numUpcomingEvents,
+      @JsonKey(name: "home_venue_id") dynamic homeVenueId,
+      @JsonKey(name: "short_name") String? shortName,
+      @JsonKey(name: "num_upcoming_events") int? numUpcomingEvents,
       dynamic colors,
-      String? imageLicense,
+      @JsonKey(name: "image_license") String? imageLicense,
       int? popularity,
-      bool? homeTeam,
+      @JsonKey(name: "home_team") bool? homeTeam,
       dynamic location,
-      String? imageRightsMessage,
-      bool? isEvent});
+      @JsonKey(name: "image_rights_message") String? imageRightsMessage,
+      @JsonKey(name: "is_event") bool? isEvent});
 
   $ImagesModelCopyWith<$Res>? get images;
   $AnnouncementsModelCopyWith<$Res>? get stats;
@@ -275,24 +284,24 @@ abstract class _$$PerformersModelImplCopyWith<$Res>
       int? id,
       ImagesModel? images,
       dynamic divisions,
-      bool? hasUpcomingEvents,
+      @JsonKey(name: "has_upcoming_events") bool? hasUpcomingEvents,
       bool? primary,
       AnnouncementsModel? stats,
       List<TaxonomiesModel>? taxonomies,
-      String? imageAttribution,
+      @JsonKey(name: "image_attribution") String? imageAttribution,
       String? url,
       double? score,
       String? slug,
-      dynamic homeVenueId,
-      String? shortName,
-      int? numUpcomingEvents,
+      @JsonKey(name: "home_venue_id") dynamic homeVenueId,
+      @JsonKey(name: "short_name") String? shortName,
+      @JsonKey(name: "num_upcoming_events") int? numUpcomingEvents,
       dynamic colors,
-      String? imageLicense,
+      @JsonKey(name: "image_license") String? imageLicense,
       int? popularity,
-      bool? homeTeam,
+      @JsonKey(name: "home_team") bool? homeTeam,
       dynamic location,
-      String? imageRightsMessage,
-      bool? isEvent});
+      @JsonKey(name: "image_rights_message") String? imageRightsMessage,
+      @JsonKey(name: "is_event") bool? isEvent});
 
   @override
   $ImagesModelCopyWith<$Res>? get images;
@@ -449,24 +458,24 @@ class _$PerformersModelImpl implements _PerformersModel {
       this.id,
       this.images,
       this.divisions,
-      this.hasUpcomingEvents,
+      @JsonKey(name: "has_upcoming_events") this.hasUpcomingEvents,
       this.primary,
       this.stats,
       final List<TaxonomiesModel>? taxonomies,
-      this.imageAttribution,
+      @JsonKey(name: "image_attribution") this.imageAttribution,
       this.url,
       this.score,
       this.slug,
-      this.homeVenueId,
-      this.shortName,
-      this.numUpcomingEvents,
+      @JsonKey(name: "home_venue_id") this.homeVenueId,
+      @JsonKey(name: "short_name") this.shortName,
+      @JsonKey(name: "num_upcoming_events") this.numUpcomingEvents,
       this.colors,
-      this.imageLicense,
+      @JsonKey(name: "image_license") this.imageLicense,
       this.popularity,
-      this.homeTeam,
+      @JsonKey(name: "home_team") this.homeTeam,
       this.location,
-      this.imageRightsMessage,
-      this.isEvent})
+      @JsonKey(name: "image_rights_message") this.imageRightsMessage,
+      @JsonKey(name: "is_event") this.isEvent})
       : _taxonomies = taxonomies;
 
   factory _$PerformersModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -485,6 +494,7 @@ class _$PerformersModelImpl implements _PerformersModel {
   @override
   final dynamic divisions;
   @override
+  @JsonKey(name: "has_upcoming_events")
   final bool? hasUpcomingEvents;
   @override
   final bool? primary;
@@ -501,6 +511,7 @@ class _$PerformersModelImpl implements _PerformersModel {
   }
 
   @override
+  @JsonKey(name: "image_attribution")
   final String? imageAttribution;
   @override
   final String? url;
@@ -509,24 +520,31 @@ class _$PerformersModelImpl implements _PerformersModel {
   @override
   final String? slug;
   @override
+  @JsonKey(name: "home_venue_id")
   final dynamic homeVenueId;
   @override
+  @JsonKey(name: "short_name")
   final String? shortName;
   @override
+  @JsonKey(name: "num_upcoming_events")
   final int? numUpcomingEvents;
   @override
   final dynamic colors;
   @override
+  @JsonKey(name: "image_license")
   final String? imageLicense;
   @override
   final int? popularity;
   @override
+  @JsonKey(name: "home_team")
   final bool? homeTeam;
   @override
   final dynamic location;
   @override
+  @JsonKey(name: "image_rights_message")
   final String? imageRightsMessage;
   @override
+  @JsonKey(name: "is_event")
   final bool? isEvent;
 
   @override
@@ -630,24 +648,24 @@ abstract class _PerformersModel implements PerformersModel {
       final int? id,
       final ImagesModel? images,
       final dynamic divisions,
-      final bool? hasUpcomingEvents,
+      @JsonKey(name: "has_upcoming_events") final bool? hasUpcomingEvents,
       final bool? primary,
       final AnnouncementsModel? stats,
       final List<TaxonomiesModel>? taxonomies,
-      final String? imageAttribution,
+      @JsonKey(name: "image_attribution") final String? imageAttribution,
       final String? url,
       final double? score,
       final String? slug,
-      final dynamic homeVenueId,
-      final String? shortName,
-      final int? numUpcomingEvents,
+      @JsonKey(name: "home_venue_id") final dynamic homeVenueId,
+      @JsonKey(name: "short_name") final String? shortName,
+      @JsonKey(name: "num_upcoming_events") final int? numUpcomingEvents,
       final dynamic colors,
-      final String? imageLicense,
+      @JsonKey(name: "image_license") final String? imageLicense,
       final int? popularity,
-      final bool? homeTeam,
+      @JsonKey(name: "home_team") final bool? homeTeam,
       final dynamic location,
-      final String? imageRightsMessage,
-      final bool? isEvent}) = _$PerformersModelImpl;
+      @JsonKey(name: "image_rights_message") final String? imageRightsMessage,
+      @JsonKey(name: "is_event") final bool? isEvent}) = _$PerformersModelImpl;
 
   factory _PerformersModel.fromJson(Map<String, dynamic> json) =
       _$PerformersModelImpl.fromJson;
@@ -665,6 +683,7 @@ abstract class _PerformersModel implements PerformersModel {
   @override
   dynamic get divisions;
   @override
+  @JsonKey(name: "has_upcoming_events")
   bool? get hasUpcomingEvents;
   @override
   bool? get primary;
@@ -673,6 +692,7 @@ abstract class _PerformersModel implements PerformersModel {
   @override
   List<TaxonomiesModel>? get taxonomies;
   @override
+  @JsonKey(name: "image_attribution")
   String? get imageAttribution;
   @override
   String? get url;
@@ -681,24 +701,31 @@ abstract class _PerformersModel implements PerformersModel {
   @override
   String? get slug;
   @override
+  @JsonKey(name: "home_venue_id")
   dynamic get homeVenueId;
   @override
+  @JsonKey(name: "short_name")
   String? get shortName;
   @override
+  @JsonKey(name: "num_upcoming_events")
   int? get numUpcomingEvents;
   @override
   dynamic get colors;
   @override
+  @JsonKey(name: "image_license")
   String? get imageLicense;
   @override
   int? get popularity;
   @override
+  @JsonKey(name: "home_team")
   bool? get homeTeam;
   @override
   dynamic get location;
   @override
+  @JsonKey(name: "image_rights_message")
   String? get imageRightsMessage;
   @override
+  @JsonKey(name: "is_event")
   bool? get isEvent;
 
   /// Create a copy of PerformersModel

@@ -16,8 +16,6 @@ class DubaiMunicipalityApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.appTheme,
-          // ThemeData.light().copyWith(scaffoldBackgroundColor: ColorsPalette.PrimaryColor,
-          //     textTheme: Theme.of(context).textTheme.apply(fontFamily: ConstantStrings.FONTNAME,)),
           home: const SplashScreen(),
         );
       },

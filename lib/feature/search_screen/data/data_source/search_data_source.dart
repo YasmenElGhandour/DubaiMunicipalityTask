@@ -1,9 +1,13 @@
 
 
+import 'package:dio/dio.dart';
+import 'package:dubai_municipality_task/core/network/models/failure.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/network/helpers/api_service.dart';
+import '../../../../core/network/models/base_response.dart';
 import '../../../../core/utils/constants_strings.dart';
+import '../../../../core/utils/extensions.dart';
 import '../models/request_models/events_request_model.dart';
 import '../models/response_models/results_model.dart';
 
@@ -20,14 +24,30 @@ class SearchDataSourceImpl implements SearchDataSource {
 
   @override
   Future<ResultsModel> getAllEvents(EventsRequestModel params) async {
-      var response = await apiService.getAllEvents(params.client_id ?? "", params.client_secret  ?? "", params.per_page ?? ConstantStrings.PERPAGE);
-      return response;
+      try{
+        var response = await apiService.getAllEvents(params.client_id ?? "", params.client_secret  ?? "", params.per_page ?? ConstantStrings.PERPAGE);
+        return response;
+      } on DioException catch (dioError) {
+        final errorMessage = handleDioError(dioError);
+        throw Failure(errorMessage: errorMessage);
+      } on Exception catch (error) {
+        throw Failure(errorMessage: error.toString());
+      }
   }
+
 
   @override
   Future<ResultsModel> getSearchedEvents(EventsRequestModel params) async{
-    var response = await apiService.getSearchedEvents(params.client_id  ?? "", params.client_secret  ?? "" ,params.per_page ?? ConstantStrings.PERPAGE, params.keyword  ?? "");
-    return response;
+    try{
+      var response = await apiService.getSearchedEvents(params.client_id  ?? "", params.client_secret  ?? "" ,params.per_page ?? ConstantStrings.PERPAGE, params.keyword  ?? "");
+      return response;
+    }on DioException catch (dioError) {
+      final errorMessage = handleDioError(dioError);
+      throw Failure(errorMessage: errorMessage);
+    } on Exception catch (error) {
+      throw Failure(errorMessage: error.toString());
+    }
+
   }
 
 }

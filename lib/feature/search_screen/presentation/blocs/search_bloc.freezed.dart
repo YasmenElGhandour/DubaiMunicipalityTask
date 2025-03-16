@@ -400,7 +400,7 @@ mixin _$SearchState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results, SearchType type) loaded,
+    required TResult Function(ResultsModel? results, SearchType type) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -408,7 +408,7 @@ mixin _$SearchState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results, SearchType type)? loaded,
+    TResult? Function(ResultsModel? results, SearchType type)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -416,7 +416,7 @@ mixin _$SearchState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results, SearchType type)? loaded,
+    TResult Function(ResultsModel? results, SearchType type)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -512,7 +512,7 @@ class _$InitialSearchImpl implements _InitialSearch {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results, SearchType type) loaded,
+    required TResult Function(ResultsModel? results, SearchType type) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -523,7 +523,7 @@ class _$InitialSearchImpl implements _InitialSearch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results, SearchType type)? loaded,
+    TResult? Function(ResultsModel? results, SearchType type)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -534,7 +534,7 @@ class _$InitialSearchImpl implements _InitialSearch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results, SearchType type)? loaded,
+    TResult Function(ResultsModel? results, SearchType type)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -629,7 +629,7 @@ class _$LoadingSearchImpl implements _LoadingSearch {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results, SearchType type) loaded,
+    required TResult Function(ResultsModel? results, SearchType type) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -640,7 +640,7 @@ class _$LoadingSearchImpl implements _LoadingSearch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results, SearchType type)? loaded,
+    TResult? Function(ResultsModel? results, SearchType type)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -651,7 +651,7 @@ class _$LoadingSearchImpl implements _LoadingSearch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results, SearchType type)? loaded,
+    TResult Function(ResultsModel? results, SearchType type)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -709,9 +709,9 @@ abstract class _$$LoadedSearchImplCopyWith<$Res> {
           _$LoadedSearchImpl value, $Res Function(_$LoadedSearchImpl) then) =
       __$$LoadedSearchImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ResultsModel results, SearchType type});
+  $Res call({ResultsModel? results, SearchType type});
 
-  $ResultsModelCopyWith<$Res> get results;
+  $ResultsModelCopyWith<$Res>? get results;
 }
 
 /// @nodoc
@@ -727,14 +727,14 @@ class __$$LoadedSearchImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? results = null,
+    Object? results = freezed,
     Object? type = null,
   }) {
     return _then(_$LoadedSearchImpl(
-      results: null == results
+      results: freezed == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
-              as ResultsModel,
+              as ResultsModel?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -746,8 +746,12 @@ class __$$LoadedSearchImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ResultsModelCopyWith<$Res> get results {
-    return $ResultsModelCopyWith<$Res>(_value.results, (value) {
+  $ResultsModelCopyWith<$Res>? get results {
+    if (_value.results == null) {
+      return null;
+    }
+
+    return $ResultsModelCopyWith<$Res>(_value.results!, (value) {
       return _then(_value.copyWith(results: value));
     });
   }
@@ -759,7 +763,7 @@ class _$LoadedSearchImpl implements _LoadedSearch {
   const _$LoadedSearchImpl({required this.results, required this.type});
 
   @override
-  final ResultsModel results;
+  final ResultsModel? results;
   @override
   final SearchType type;
 
@@ -793,7 +797,7 @@ class _$LoadedSearchImpl implements _LoadedSearch {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results, SearchType type) loaded,
+    required TResult Function(ResultsModel? results, SearchType type) loaded,
     required TResult Function(String message) error,
   }) {
     return loaded(results, type);
@@ -804,7 +808,7 @@ class _$LoadedSearchImpl implements _LoadedSearch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results, SearchType type)? loaded,
+    TResult? Function(ResultsModel? results, SearchType type)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(results, type);
@@ -815,7 +819,7 @@ class _$LoadedSearchImpl implements _LoadedSearch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results, SearchType type)? loaded,
+    TResult Function(ResultsModel? results, SearchType type)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -865,10 +869,10 @@ class _$LoadedSearchImpl implements _LoadedSearch {
 
 abstract class _LoadedSearch implements SearchState {
   const factory _LoadedSearch(
-      {required final ResultsModel results,
+      {required final ResultsModel? results,
       required final SearchType type}) = _$LoadedSearchImpl;
 
-  ResultsModel get results;
+  ResultsModel? get results;
   SearchType get type;
 
   /// Create a copy of SearchState
@@ -948,7 +952,7 @@ class _$ErrorSearchImpl implements _ErrorSearch {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results, SearchType type) loaded,
+    required TResult Function(ResultsModel? results, SearchType type) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -959,7 +963,7 @@ class _$ErrorSearchImpl implements _ErrorSearch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results, SearchType type)? loaded,
+    TResult? Function(ResultsModel? results, SearchType type)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -970,7 +974,7 @@ class _$ErrorSearchImpl implements _ErrorSearch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results, SearchType type)? loaded,
+    TResult Function(ResultsModel? results, SearchType type)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

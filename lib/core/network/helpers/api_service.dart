@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../feature/search_screen/data/models/response_models/results_model.dart';
+import '../models/base_response.dart';
 import 'api_urls.dart';
 
 part 'api_service.g.dart';

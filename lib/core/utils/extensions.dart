@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -49,4 +50,24 @@ String formatDateString(String dateTimeString) {
   String ampm = ampmFormat.format(dateTime);
 
   return '$dayName, $dayNumber $monthName $yearNumber $hour:$minute $ampm';
+}
+String handleDioError(DioException dioError) {
+  switch (dioError.type) {
+    case DioExceptionType.connectionTimeout:
+      return 'Connection Timeout. Please try again.';
+    case DioExceptionType.sendTimeout:
+      return 'Send Timeout. Please try again.';
+    case DioExceptionType.receiveTimeout:
+      return 'Receive Timeout. Please try again.';
+    case DioExceptionType.badResponse:
+      final statusCode = dioError.response?.statusCode;
+      return 'Received invalid status code: $statusCode';
+    case DioExceptionType.cancel:
+      return 'Request was cancelled.';
+    case DioExceptionType.connectionError:
+      return 'Connection Error. Please check your internet.';
+    case DioExceptionType.unknown:
+    default:
+      return dioError.response?.data.toString() ?? dioError.message ?? 'Unknown error occurred';
+  }
 }

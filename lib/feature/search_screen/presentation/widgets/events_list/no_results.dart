@@ -14,6 +14,7 @@ class NoResults extends StatelessWidget {
       padding: EdgeInsets.all(8.0.r),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           EventTitle(ConstantStrings.NO_RESULTS ?? "", style: TextStyle(
               fontWeight: FontWeight.w600,

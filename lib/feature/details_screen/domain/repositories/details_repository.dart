@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 
+import '../../../../core/network/models/base_response.dart';
 import '../../../../core/network/models/failure.dart';
 import '../../../search_screen/data/models/response_models/results_model.dart';
 import '../../data/models/request_models/details_request_model.dart';

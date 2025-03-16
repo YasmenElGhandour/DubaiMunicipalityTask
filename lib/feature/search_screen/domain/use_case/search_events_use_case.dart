@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import '../../../../core/network/models/base_response.dart';
 import '../../../../core/network/models/failure.dart';
 import '../../../../core/use_case/usecase.dart';
 import '../../data/models/request_models/events_request_model.dart';

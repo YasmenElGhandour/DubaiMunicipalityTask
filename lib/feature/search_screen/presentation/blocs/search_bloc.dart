@@ -71,6 +71,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
             client_secret: ApiUrls.CLIENT_SECRET,
             keyword: keyWord,
             per_page: ConstantStrings.PERPAGE)));
+
   }
 
 }

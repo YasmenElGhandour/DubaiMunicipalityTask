@@ -238,7 +238,7 @@ mixin _$DetailsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results) loaded,
+    required TResult Function(ResultsModel? results) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -246,7 +246,7 @@ mixin _$DetailsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results)? loaded,
+    TResult? Function(ResultsModel? results)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -254,7 +254,7 @@ mixin _$DetailsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results)? loaded,
+    TResult Function(ResultsModel? results)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -350,7 +350,7 @@ class _$InitialDetailsImpl implements _InitialDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results) loaded,
+    required TResult Function(ResultsModel? results) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -361,7 +361,7 @@ class _$InitialDetailsImpl implements _InitialDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results)? loaded,
+    TResult? Function(ResultsModel? results)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -372,7 +372,7 @@ class _$InitialDetailsImpl implements _InitialDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results)? loaded,
+    TResult Function(ResultsModel? results)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -467,7 +467,7 @@ class _$LoadingDetailsImpl implements _LoadingDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results) loaded,
+    required TResult Function(ResultsModel? results) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -478,7 +478,7 @@ class _$LoadingDetailsImpl implements _LoadingDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results)? loaded,
+    TResult? Function(ResultsModel? results)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -489,7 +489,7 @@ class _$LoadingDetailsImpl implements _LoadingDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results)? loaded,
+    TResult Function(ResultsModel? results)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -547,9 +547,9 @@ abstract class _$$LoadedDetailsImplCopyWith<$Res> {
           _$LoadedDetailsImpl value, $Res Function(_$LoadedDetailsImpl) then) =
       __$$LoadedDetailsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ResultsModel results});
+  $Res call({ResultsModel? results});
 
-  $ResultsModelCopyWith<$Res> get results;
+  $ResultsModelCopyWith<$Res>? get results;
 }
 
 /// @nodoc
@@ -565,13 +565,13 @@ class __$$LoadedDetailsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? results = null,
+    Object? results = freezed,
   }) {
     return _then(_$LoadedDetailsImpl(
-      results: null == results
+      results: freezed == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
-              as ResultsModel,
+              as ResultsModel?,
     ));
   }
 
@@ -579,8 +579,12 @@ class __$$LoadedDetailsImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ResultsModelCopyWith<$Res> get results {
-    return $ResultsModelCopyWith<$Res>(_value.results, (value) {
+  $ResultsModelCopyWith<$Res>? get results {
+    if (_value.results == null) {
+      return null;
+    }
+
+    return $ResultsModelCopyWith<$Res>(_value.results!, (value) {
       return _then(_value.copyWith(results: value));
     });
   }
@@ -592,7 +596,7 @@ class _$LoadedDetailsImpl implements _LoadedDetails {
   const _$LoadedDetailsImpl({required this.results});
 
   @override
-  final ResultsModel results;
+  final ResultsModel? results;
 
   @override
   String toString() {
@@ -623,7 +627,7 @@ class _$LoadedDetailsImpl implements _LoadedDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results) loaded,
+    required TResult Function(ResultsModel? results) loaded,
     required TResult Function(String message) error,
   }) {
     return loaded(results);
@@ -634,7 +638,7 @@ class _$LoadedDetailsImpl implements _LoadedDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results)? loaded,
+    TResult? Function(ResultsModel? results)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(results);
@@ -645,7 +649,7 @@ class _$LoadedDetailsImpl implements _LoadedDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results)? loaded,
+    TResult Function(ResultsModel? results)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -694,10 +698,10 @@ class _$LoadedDetailsImpl implements _LoadedDetails {
 }
 
 abstract class _LoadedDetails implements DetailsState {
-  const factory _LoadedDetails({required final ResultsModel results}) =
+  const factory _LoadedDetails({required final ResultsModel? results}) =
       _$LoadedDetailsImpl;
 
-  ResultsModel get results;
+  ResultsModel? get results;
 
   /// Create a copy of DetailsState
   /// with the given fields replaced by the non-null parameter values.
@@ -776,7 +780,7 @@ class _$ErrorDetailsImpl implements _ErrorDetails {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResultsModel results) loaded,
+    required TResult Function(ResultsModel? results) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -787,7 +791,7 @@ class _$ErrorDetailsImpl implements _ErrorDetails {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResultsModel results)? loaded,
+    TResult? Function(ResultsModel? results)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -798,7 +802,7 @@ class _$ErrorDetailsImpl implements _ErrorDetails {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResultsModel results)? loaded,
+    TResult Function(ResultsModel? results)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

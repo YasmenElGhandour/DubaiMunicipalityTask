@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/injectable.dart';
 import '../../../../core/network/helpers/api_urls.dart';
 import '../../../../core/theme/colors_palette.dart';
+import '../../../../core/utils/constants_strings.dart';
 import '../../data/models/request_models/details_request_model.dart';
 import '../blocs/details_bloc.dart';
 import '../widgets/details_body.dart';
@@ -33,7 +34,7 @@ class DetailsScreen extends StatelessWidget {
              return state.when(
                   initial: () => DetailsLoading(),
                   loading: () => DetailsLoading(),
-                  loaded: (results) => DetailsBody(resultsModel:results,),
+                  loaded: (results) => results != null ? DetailsBody(resultsModel:results,) : DetailsError(message: ConstantStrings.REQUEST_NOT_FOUND),
                   error:(errorMessage) => DetailsError(message: errorMessage)
              );
             },

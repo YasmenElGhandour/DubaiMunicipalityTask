@@ -25,7 +25,7 @@ class DetailsBloc extends Bloc<DetailsEvent, DetailsState> {
       final result = await detailsUseCase(event.requestModel);
       result.fold(
             (failure) => emit(DetailsState.error(message: failure.errorMessage)),
-            (response) => emit(DetailsState.loaded(results: response)),
+            (response) => emit(DetailsState.loaded(results: response )),
       );
     }
 }

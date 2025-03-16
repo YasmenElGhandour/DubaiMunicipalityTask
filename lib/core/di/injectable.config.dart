@@ -23,6 +23,8 @@ import 'package:dubai_municipality_task/feature/details_screen/domain/use_case/d
     as _i501;
 import 'package:dubai_municipality_task/feature/details_screen/presentation/blocs/details_bloc.dart'
     as _i129;
+import 'package:dubai_municipality_task/feature/details_screen/presentation/blocs/favourite_bloc.dart'
+    as _i1046;
 import 'package:dubai_municipality_task/feature/search_screen/data/data_source/search_data_source.dart'
     as _i692;
 import 'package:dubai_municipality_task/feature/search_screen/data/repositories/search_repository_impl.dart'
@@ -51,6 +53,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final registerModule = _$RegisterModule();
     gh.factory<_i326.ApiService>(() => registerModule.apiService);
+    gh.factory<_i1046.FavouriteBloc>(() => _i1046.FavouriteBloc());
     gh.lazySingleton<_i361.Dio>(() => registerModule.dio);
     gh.factory<_i692.SearchDataSource>(
         () => _i692.SearchDataSourceImpl(apiService: gh<_i326.ApiService>()));

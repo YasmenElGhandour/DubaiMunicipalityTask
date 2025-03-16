@@ -7,8 +7,9 @@ import '../../../search_screen/presentation/widgets/events_list/event_title.dart
 import 'details_back_icon.dart';
 
 class DetailsAppBar extends StatelessWidget {
-  const DetailsAppBar({super.key, required this.title});
+  const DetailsAppBar({super.key, required this.title, required this.itemId});
   final String title;
+  final int itemId;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,8 @@ class DetailsAppBar extends StatelessWidget {
                   color: ColorsPalette.BlackColor)
           ),
         ),
-        SizedBox(width: 16.w,),
-        EventListFavIcon()
+        SizedBox(width: 8.w,),
+        EventListFavIcon(itemId : itemId)
       ],
     );
   }

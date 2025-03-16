@@ -8,6 +8,7 @@ import '../../../../core/theme/colors_palette.dart';
 import '../../../../core/utils/constants_strings.dart';
 import '../../data/models/request_models/details_request_model.dart';
 import '../blocs/details_bloc.dart';
+import '../blocs/favourite_bloc.dart';
 import '../widgets/details_app_bar.dart';
 import '../widgets/details_body.dart';
 import '../widgets/details_error.dart';
@@ -18,16 +19,24 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<DetailsBloc>()
-        ..add(
-          DetailsEvent.getDetails(
-            DetailsRequestModel(
-                id: id,
-                client_id: ApiUrls.CLIENT_ID,
-                client_secret: ApiUrls.CLIENT_SECRET),
-          ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<DetailsBloc>()
+            ..add(
+              DetailsEvent.getDetails(
+                DetailsRequestModel(
+                  id: id,
+                  client_id: ApiUrls.CLIENT_ID,
+                  client_secret: ApiUrls.CLIENT_SECRET,
+                ),
+              ),
+            ),
         ),
+        BlocProvider(
+          create: (context) => getIt<FavouriteBloc>(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: BlocBuilder<DetailsBloc, DetailsState>(

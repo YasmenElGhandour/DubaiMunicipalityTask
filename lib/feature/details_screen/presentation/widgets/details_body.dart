@@ -20,7 +20,7 @@ class DetailsBody extends StatelessWidget {
       padding: EdgeInsets.all(16.0.sp),
       child: Column(
         children: [
-          DetailsAppBar(title : resultsModel?.events?[0].title ?? ""),
+          DetailsAppBar(title : resultsModel?.events?[0].title ?? "", itemId: resultsModel?.events?[0].id ?? -1,),
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

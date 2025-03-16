@@ -13,9 +13,9 @@ It developed to interact with Seat Geek data, providing access to key informatio
 
 The app allows you to:
 - See some events before search
-- Search for different services offered by the Seat Geek.
+- Search for different events offered by the Seat Geek.
 - Clear or Cancel Search
-- View detailed information about event.
+- View detailes information about event.
 
 ## Built With
 
@@ -37,16 +37,16 @@ To get started with the project, clone the repository and follow the setup steps
  Install Flutter
 
 ## Installation
-1- Clone the repo:
+- Clone the repo:
 ` git clone https://github.com/YasmenElGhandour/DubaiMunicipalityTask.git
 `
-2- Navigate to the project directory:
+- Navigate to the project directory:
 `cd DubaiMunicipalityTask
 `
-3- Install dependencies:
+- Install dependencies:
 `flutter pub get
 `
-4- Run the application:
+- Run the application:
 `flutter run
 `
 

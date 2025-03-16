@@ -6,8 +6,8 @@ import 'colors_palette.dart';
 class AppTheme {
   static final appTheme = ThemeData(
       primaryColor: ColorsPalette.PrimaryColor,
-      scaffoldBackgroundColor: ColorsPalette.SecondryColor,
-      brightness: Brightness.light,
+      scaffoldBackgroundColor: ColorsPalette.WhiteColor,
+      brightness: Brightness.dark,
      textTheme: const TextTheme().apply(
       fontFamily: ConstantStrings.FONTNAME,
     ),

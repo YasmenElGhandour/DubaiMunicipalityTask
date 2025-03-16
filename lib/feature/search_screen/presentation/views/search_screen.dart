@@ -29,19 +29,21 @@ class SearchScreen extends StatelessWidget {
          appBar: AppBar(scrolledUnderElevation:0, toolbarHeight: 0,
              backgroundColor: ColorsPalette.PrimaryColor),
         backgroundColor: ColorsPalette.WhiteColor,
-        body: Column(
-          children: [
-            SearchBarWidget(),
-            BlocBuilder<SearchBloc, SearchState>(
-              builder: (context, state) {
-                return state.when(
-                    initial: () => EventsListLoading(),
-                    loading: () => EventsListLoading(),
-                    loaded: (results, type) => results == null || results?.events == null || results?.events?.length == 0 ? NoResults() :  EventsList(resultsModel: results) ,
-                    error: (errorMessage) => Text(errorMessage));
-              },
-            )
-          ],
+        body: SafeArea(
+          child: Column(
+            children: [
+              SearchBarWidget(),
+              BlocBuilder<SearchBloc, SearchState>(
+                builder: (context, state) {
+                  return state.when(
+                      initial: () => EventsListLoading(),
+                      loading: () => EventsListLoading(),
+                      loaded: (results, type) => results == null || results?.events == null || results?.events?.length == 0 ? NoResults() :  EventsList(resultsModel: results) ,
+                      error: (errorMessage) => Text(errorMessage));
+                },
+              )
+            ],
+          ),
         ),
       ),
     );

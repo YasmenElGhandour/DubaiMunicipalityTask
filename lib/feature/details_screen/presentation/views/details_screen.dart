@@ -27,7 +27,6 @@ class DetailsScreen extends StatelessWidget {
           ),
         ),
       child: Scaffold(
-        backgroundColor: ColorsPalette.WhiteColor,
         body: SafeArea(
           child: BlocBuilder<DetailsBloc, DetailsState>(
             builder: (context, state) {

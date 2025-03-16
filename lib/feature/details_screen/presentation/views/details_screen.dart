@@ -7,6 +7,7 @@ import '../../../../core/theme/colors_palette.dart';
 import '../../../../core/utils/constants_strings.dart';
 import '../../data/models/request_models/details_request_model.dart';
 import '../blocs/details_bloc.dart';
+import '../widgets/details_app_bar.dart';
 import '../widgets/details_body.dart';
 import '../widgets/details_error.dart';
 
@@ -30,12 +31,16 @@ class DetailsScreen extends StatelessWidget {
         body: SafeArea(
           child: BlocBuilder<DetailsBloc, DetailsState>(
             builder: (context, state) {
-             return state.when(
+              return state.when(
                   initial: () => DetailsLoading(),
                   loading: () => DetailsLoading(),
-                  loaded: (results) => results != null ? DetailsBody(resultsModel:results,) : DetailsError(message: ConstantStrings.REQUEST_NOT_FOUND),
-                  error:(errorMessage) => DetailsError(message: errorMessage)
-             );
+                  loaded: (results) => results != null
+                      ? DetailsBody(
+                          resultsModel: results,
+                        )
+                      : DetailsError(
+                          message: ConstantStrings.REQUEST_NOT_FOUND),
+                  error: (errorMessage) => DetailsError(message: errorMessage));
             },
           ),
         ),

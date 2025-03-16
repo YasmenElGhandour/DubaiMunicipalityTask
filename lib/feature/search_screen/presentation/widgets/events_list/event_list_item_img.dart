@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../splash/presentation/widgets/splash_logo.dart';
+import 'event_placholder_image.dart';
 
 class EventListItemImg extends StatelessWidget {
   const EventListItemImg({super.key, required this.imageUrl});
@@ -20,8 +21,8 @@ class EventListItemImg extends StatelessWidget {
         child: CachedNetworkImage(
           imageUrl:imageUrl,
             //  "https://www.dm.gov.ae/wp-content/uploads/2024/05/Dubai-Municipality-opens-registrations-for-first-edition-of-DM-Food-Elite-Program.jpg.webp",
-          placeholder: (context, url) => const SplashLogo(),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
+          placeholder: (context, url) => const EventPlacholderImage(),
+          errorWidget: (context, url, error) => const EventPlacholderImage(),
           width: 60.w,
           height: 60.h,
           fit: BoxFit.cover,

@@ -1,3 +1,4 @@
+import 'package:dubai_municipality_task/feature/search_screen/presentation/views/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/theme/app_theme.dart';
@@ -14,7 +15,8 @@ class DubaiMunicipalityApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.appTheme,
-          home: const SplashScreen(),
+           home: const SplashScreen(),
+
         );
       },
     );

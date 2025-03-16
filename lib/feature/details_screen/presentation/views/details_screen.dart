@@ -1,5 +1,6 @@
 import 'package:dubai_municipality_task/feature/details_screen/presentation/widgets/details_loading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/injectable.dart';
 import '../../../../core/network/helpers/api_urls.dart';

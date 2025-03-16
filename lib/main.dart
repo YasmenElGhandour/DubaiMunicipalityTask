@@ -8,12 +8,6 @@ import 'dubai_municipality_app.dart';
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle.light.copyWith(
-    statusBarColor: ColorsPalette.WhiteColor,
-    statusBarBrightness: Brightness.dark,
-    statusBarIconBrightness: Brightness.dark,
-  ));
   configureDependencies();
   runApp(const DubaiMunicipalityApp());
 }

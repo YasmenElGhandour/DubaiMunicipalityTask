@@ -29,6 +29,7 @@ class SearchScreen extends StatelessWidget {
       child: Scaffold(
          appBar: AppBar(
              scrolledUnderElevation:0, toolbarHeight: 0,
+             backgroundColor: ColorsPalette.PrimaryColor,
              systemOverlayStyle :SystemUiOverlayStyle.light.copyWith(
            statusBarColor: ColorsPalette.PrimaryColor,
            statusBarBrightness: Brightness.light,

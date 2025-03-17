@@ -29,4 +29,6 @@ class ConstantStrings {
   static const REQUEST_CANCELLED = 'Request was cancelled.';
   static const CONNECTION_ERROR = 'Connection Error. Please check your internet.';
   static const UNKNOEN_ERROR = 'Unknown error occurred';
+  static const  FAVOURITE_BOX = 'favouritesBox';
+
 }

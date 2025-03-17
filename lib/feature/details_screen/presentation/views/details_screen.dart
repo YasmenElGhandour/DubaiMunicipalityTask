@@ -33,9 +33,9 @@ class DetailsScreen extends StatelessWidget {
               ),
             ),
         ),
-        BlocProvider(
-          create: (context) => getIt<FavouriteBloc>(),
-        ),
+        // BlocProvider(
+        //   create: (context) => getIt<FavouriteBloc>(),
+        // ),
       ],
       child: Scaffold(
         body: SafeArea(

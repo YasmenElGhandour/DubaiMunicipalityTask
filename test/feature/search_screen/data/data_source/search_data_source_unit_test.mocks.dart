@@ -46,6 +46,7 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
   _i4.Future<_i2.ResultsModel> getAllEvents(
     String? clientId,
     String? clientSecret,
+    int? page,
     int? perPage,
   ) =>
       (super.noSuchMethod(
@@ -54,6 +55,7 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
           [
             clientId,
             clientSecret,
+            page,
             perPage,
           ],
         ),
@@ -64,6 +66,7 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
             [
               clientId,
               clientSecret,
+              page,
               perPage,
             ],
           ),
@@ -74,6 +77,7 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
   _i4.Future<_i2.ResultsModel> getSearchedEvents(
     String? clientId,
     String? clientSecret,
+    int? page,
     int? perPage,
     String? keyword,
   ) =>
@@ -83,6 +87,7 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
           [
             clientId,
             clientSecret,
+            page,
             perPage,
             keyword,
           ],
@@ -94,6 +99,7 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
             [
               clientId,
               clientSecret,
+              page,
               perPage,
               keyword,
             ],

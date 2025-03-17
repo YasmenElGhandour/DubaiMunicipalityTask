@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dubai_municipality_task/core/network/helpers/api_urls.dart';
 import 'package:dubai_municipality_task/feature/search_screen/data/data_source/search_data_source.dart';
 import 'package:dubai_municipality_task/feature/search_screen/data/models/request_models/events_request_model.dart';
 import 'package:dubai_municipality_task/feature/search_screen/data/models/response_models/results_model.dart';
@@ -24,12 +23,14 @@ void main() {
 
   const clientId = 'testClientId';
   const clientSecret = 'testClientSecret';
+  const page = 1;
   const perPage = 10;
   const keyword = 'concert';
 
   final requestModel = EventsRequestModel.search(
     client_id: clientId,
     client_secret: clientSecret,
+    page: page,
     per_page: perPage,
     keyword: keyword,
   );
@@ -39,7 +40,7 @@ void main() {
   group('SearchDataSourceAllEvents Tests', () {
 
     test('getAllEvents should return ResultsModel on success', () async {
-      when(mockApiService.getAllEvents(clientId, clientSecret, perPage))
+      when(mockApiService.getAllEvents(clientId, clientSecret,page, perPage))
           .thenAnswer((_) async => resultsModel);
 
       final result = await dataSource.getAllEvents(requestModel);
@@ -48,7 +49,7 @@ void main() {
     });
 
     test('getAllEvents should throw Failure on DioException', () async {
-      when(mockApiService.getAllEvents(clientId, clientSecret, perPage))
+      when(mockApiService.getAllEvents(clientId, clientSecret,page, perPage))
           .thenThrow(DioException(requestOptions: RequestOptions(path: '')));
       expect(() async => await dataSource.getAllEvents(requestModel), throwsA(isA<Failure>()),);
     });
@@ -58,7 +59,7 @@ void main() {
   group('SearchDataSourceSearchedEvents Tests', () {
 
     test('getSearchedEvents should return ResultsModel on success', () async {
-      when(mockApiService.getSearchedEvents(clientId, clientSecret, perPage, keyword))
+      when(mockApiService.getSearchedEvents(clientId, clientSecret,page, perPage, keyword))
           .thenAnswer((_) async => resultsModel);
 
       final result = await dataSource.getSearchedEvents(requestModel);
@@ -66,7 +67,7 @@ void main() {
     });
 
     test('getSearchedEvents should throw Failure on Exception', () async {
-      when(mockApiService.getSearchedEvents(clientId, clientSecret, perPage, keyword))
+      when(mockApiService.getSearchedEvents(clientId, clientSecret,page, perPage, keyword))
           .thenThrow(Exception('Unexpected Error'));
 
       expect(

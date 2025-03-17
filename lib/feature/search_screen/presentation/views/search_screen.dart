@@ -46,7 +46,7 @@ class SearchScreen extends StatelessWidget {
                   return state.when(
                       initial: () => EventsListLoading(),
                       loading: () => EventsListLoading(),
-                      loaded: (results, type) => results == null || results?.events == null || results?.events?.length == 0 ? NoResults() :  EventsList(resultsModel: results) ,
+                      loaded: (results, type) => results == null || results?.events == null || results?.events?.length == 0 ? NoResults() :  EventsList(resultsModel: results,searchType:type) ,
                       error: (errorMessage) => Text(errorMessage));
                 },
               )

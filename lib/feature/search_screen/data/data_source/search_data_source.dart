@@ -1,7 +1,9 @@
 
 
 import 'package:dio/dio.dart';
+import 'package:dubai_municipality_task/core/network/interceptors/error_interceptor.dart';
 import 'package:dubai_municipality_task/core/network/models/failure.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/network/helpers/api_service.dart';
@@ -24,14 +26,18 @@ class SearchDataSourceImpl implements SearchDataSource {
 
   @override
   Future<ResultsModel> getAllEvents(EventsRequestModel params) async {
-      try{
-        var response = await apiService.getAllEvents(params.client_id ?? "", params.client_secret  ?? "", params.per_page ?? ConstantStrings.PERPAGE);
-        return response;
+      try {
+        var response = await apiService.getAllEvents(
+            params.client_id ?? "", params.client_secret ?? "",
+            params.page ?? 1, params.per_page ?? ConstantStrings.PERPAGE);
+          return response;
+      }on AppError catch (e){
+        throw Failure(errorMessage: e.message);
       } on DioException catch (dioError) {
-        final errorMessage = handleDioError(dioError);
-        throw Failure(errorMessage: errorMessage);
+        throw Failure(errorMessage: handleDioError(dioError));
       } on Exception catch (error) {
-        throw Failure(errorMessage: error.toString());
+        debugPrint("${error.toString()}");
+        throw Failure(errorMessage: ConstantStrings.SOMETHING_WENT_WRONG);
       }
   }
 
@@ -39,13 +45,17 @@ class SearchDataSourceImpl implements SearchDataSource {
   @override
   Future<ResultsModel> getSearchedEvents(EventsRequestModel params) async{
     try{
-      var response = await apiService.getSearchedEvents(params.client_id  ?? "", params.client_secret  ?? "" ,params.per_page ?? ConstantStrings.PERPAGE, params.keyword  ?? "");
-      return response;
-    }on DioException catch (dioError) {
+      var response = await apiService.getSearchedEvents(params.client_id  ?? "", params.client_secret  ?? "" , params.page ?? 1 ,params.per_page ?? ConstantStrings.PERPAGE, params.keyword  ?? "");
+        return response;
+    }on AppError catch (e) {
+      throw Failure(errorMessage: e.message);
+    }
+    on DioException catch (dioError) {
       final errorMessage = handleDioError(dioError);
       throw Failure(errorMessage: errorMessage);
     } on Exception catch (error) {
-      throw Failure(errorMessage: error.toString());
+      debugPrint("${error.toString()}");
+      throw Failure(errorMessage: ConstantStrings.SOMETHING_WENT_WRONG);
     }
 
   }

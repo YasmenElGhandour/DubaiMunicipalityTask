@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:dubai_municipality_task/core/utils/constants_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -32,13 +33,13 @@ double screenHeightMediaQuery(BuildContext context) {
 String formatDateString(String dateTimeString) {
   if(dateTimeString.isEmpty) return "";
   DateTime dateTime = DateTime.parse(dateTimeString);
-  DateFormat dayFormat = DateFormat('EEEE'); // Full day name (e.g., Monday)
-  DateFormat monthFormat = DateFormat('MMMM'); // Full month name (e.g., December)
-  DateFormat dayNumberFormat = DateFormat('d'); // Day number (e.g., 11)
-  DateFormat yearFormat = DateFormat('yyyy'); // Year (e.g., 2024)
-  DateFormat hourFormat = DateFormat('h'); // Hour in 12-hour format (e.g., 1)
-  DateFormat minuteFormat = DateFormat('mm'); // Minute (e.g., 05)
-  DateFormat ampmFormat = DateFormat('a'); // AM/PM (e.g., AM)
+  DateFormat dayFormat = DateFormat('EEEE');
+  DateFormat monthFormat = DateFormat('MMMM');
+  DateFormat dayNumberFormat = DateFormat('d');
+  DateFormat yearFormat = DateFormat('yyyy');
+  DateFormat hourFormat = DateFormat('h');
+  DateFormat minuteFormat = DateFormat('mm');
+  DateFormat ampmFormat = DateFormat('a');
 
   String dayName = dayFormat.format(dateTime);
   String monthName = monthFormat.format(dateTime);
@@ -54,20 +55,21 @@ String formatDateString(String dateTimeString) {
 String handleDioError(DioException dioError) {
   switch (dioError.type) {
     case DioExceptionType.connectionTimeout:
-      return 'Connection Timeout. Please try again.';
+      return ConstantStrings.CONNECTION_TIME_OUT;
     case DioExceptionType.sendTimeout:
-      return 'Send Timeout. Please try again.';
+      return ConstantStrings.SEND_TIMEOUT;
     case DioExceptionType.receiveTimeout:
-      return 'Receive Timeout. Please try again.';
+      return ConstantStrings.RECIEVE_TIMEOUT;
     case DioExceptionType.badResponse:
       final statusCode = dioError.response?.statusCode;
-      return 'Received invalid status code: $statusCode';
+      return '${ConstantStrings.BAD_RESPONSE} $statusCode';
     case DioExceptionType.cancel:
-      return 'Request was cancelled.';
+      return ConstantStrings.REQUEST_CANCELLED;
     case DioExceptionType.connectionError:
-      return 'Connection Error. Please check your internet.';
+      return ConstantStrings.CONNECTION_ERROR;
     case DioExceptionType.unknown:
+      return ConstantStrings.UNKNOEN_ERROR;
     default:
-      return dioError.response?.data.toString() ?? dioError.message ?? 'Unknown error occurred';
+      return dioError.response?.data.toString() ?? dioError.message ?? ConstantStrings.UNKNOEN_ERROR;
   }
 }

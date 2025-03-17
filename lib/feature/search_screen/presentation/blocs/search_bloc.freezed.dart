@@ -16,24 +16,29 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SearchEvent {
-  EventsRequestModel get requestModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(EventsRequestModel requestModel) getAllEvents,
     required TResult Function(EventsRequestModel requestModel)
         getSearchedEvents,
+    required TResult Function() loadMoreAllEvents,
+    required TResult Function() loadMoreSearchedEvents,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EventsRequestModel requestModel)? getAllEvents,
     TResult? Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult? Function()? loadMoreAllEvents,
+    TResult? Function()? loadMoreSearchedEvents,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EventsRequestModel requestModel)? getAllEvents,
     TResult Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult Function()? loadMoreAllEvents,
+    TResult Function()? loadMoreSearchedEvents,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -41,26 +46,27 @@ mixin _$SearchEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetAllEvents value) getAllEvents,
     required TResult Function(_GetSearchedEvents value) getSearchedEvents,
+    required TResult Function(_LoadMoreAllEvents value) loadMoreAllEvents,
+    required TResult Function(_LoadMoreSearchedEvents value)
+        loadMoreSearchedEvents,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetAllEvents value)? getAllEvents,
     TResult? Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult? Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult? Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetAllEvents value)? getAllEvents,
     TResult Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of SearchEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $SearchEventCopyWith<SearchEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -69,8 +75,6 @@ abstract class $SearchEventCopyWith<$Res> {
   factory $SearchEventCopyWith(
           SearchEvent value, $Res Function(SearchEvent) then) =
       _$SearchEventCopyWithImpl<$Res, SearchEvent>;
-  @useResult
-  $Res call({EventsRequestModel requestModel});
 }
 
 /// @nodoc
@@ -85,27 +89,13 @@ class _$SearchEventCopyWithImpl<$Res, $Val extends SearchEvent>
 
   /// Create a copy of SearchEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? requestModel = null,
-  }) {
-    return _then(_value.copyWith(
-      requestModel: null == requestModel
-          ? _value.requestModel
-          : requestModel // ignore: cast_nullable_to_non_nullable
-              as EventsRequestModel,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$GetAllEventsImplCopyWith<$Res>
-    implements $SearchEventCopyWith<$Res> {
+abstract class _$$GetAllEventsImplCopyWith<$Res> {
   factory _$$GetAllEventsImplCopyWith(
           _$GetAllEventsImpl value, $Res Function(_$GetAllEventsImpl) then) =
       __$$GetAllEventsImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({EventsRequestModel requestModel});
 }
@@ -173,6 +163,8 @@ class _$GetAllEventsImpl implements _GetAllEvents {
     required TResult Function(EventsRequestModel requestModel) getAllEvents,
     required TResult Function(EventsRequestModel requestModel)
         getSearchedEvents,
+    required TResult Function() loadMoreAllEvents,
+    required TResult Function() loadMoreSearchedEvents,
   }) {
     return getAllEvents(requestModel);
   }
@@ -182,6 +174,8 @@ class _$GetAllEventsImpl implements _GetAllEvents {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EventsRequestModel requestModel)? getAllEvents,
     TResult? Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult? Function()? loadMoreAllEvents,
+    TResult? Function()? loadMoreSearchedEvents,
   }) {
     return getAllEvents?.call(requestModel);
   }
@@ -191,6 +185,8 @@ class _$GetAllEventsImpl implements _GetAllEvents {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EventsRequestModel requestModel)? getAllEvents,
     TResult Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult Function()? loadMoreAllEvents,
+    TResult Function()? loadMoreSearchedEvents,
     required TResult orElse(),
   }) {
     if (getAllEvents != null) {
@@ -204,6 +200,9 @@ class _$GetAllEventsImpl implements _GetAllEvents {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetAllEvents value) getAllEvents,
     required TResult Function(_GetSearchedEvents value) getSearchedEvents,
+    required TResult Function(_LoadMoreAllEvents value) loadMoreAllEvents,
+    required TResult Function(_LoadMoreSearchedEvents value)
+        loadMoreSearchedEvents,
   }) {
     return getAllEvents(this);
   }
@@ -213,6 +212,8 @@ class _$GetAllEventsImpl implements _GetAllEvents {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetAllEvents value)? getAllEvents,
     TResult? Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult? Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult? Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
   }) {
     return getAllEvents?.call(this);
   }
@@ -222,6 +223,8 @@ class _$GetAllEventsImpl implements _GetAllEvents {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetAllEvents value)? getAllEvents,
     TResult Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
     required TResult orElse(),
   }) {
     if (getAllEvents != null) {
@@ -235,24 +238,20 @@ abstract class _GetAllEvents implements SearchEvent {
   const factory _GetAllEvents(final EventsRequestModel requestModel) =
       _$GetAllEventsImpl;
 
-  @override
   EventsRequestModel get requestModel;
 
   /// Create a copy of SearchEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAllEventsImplCopyWith<_$GetAllEventsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetSearchedEventsImplCopyWith<$Res>
-    implements $SearchEventCopyWith<$Res> {
+abstract class _$$GetSearchedEventsImplCopyWith<$Res> {
   factory _$$GetSearchedEventsImplCopyWith(_$GetSearchedEventsImpl value,
           $Res Function(_$GetSearchedEventsImpl) then) =
       __$$GetSearchedEventsImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({EventsRequestModel requestModel});
 }
@@ -321,6 +320,8 @@ class _$GetSearchedEventsImpl implements _GetSearchedEvents {
     required TResult Function(EventsRequestModel requestModel) getAllEvents,
     required TResult Function(EventsRequestModel requestModel)
         getSearchedEvents,
+    required TResult Function() loadMoreAllEvents,
+    required TResult Function() loadMoreSearchedEvents,
   }) {
     return getSearchedEvents(requestModel);
   }
@@ -330,6 +331,8 @@ class _$GetSearchedEventsImpl implements _GetSearchedEvents {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(EventsRequestModel requestModel)? getAllEvents,
     TResult? Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult? Function()? loadMoreAllEvents,
+    TResult? Function()? loadMoreSearchedEvents,
   }) {
     return getSearchedEvents?.call(requestModel);
   }
@@ -339,6 +342,8 @@ class _$GetSearchedEventsImpl implements _GetSearchedEvents {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(EventsRequestModel requestModel)? getAllEvents,
     TResult Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult Function()? loadMoreAllEvents,
+    TResult Function()? loadMoreSearchedEvents,
     required TResult orElse(),
   }) {
     if (getSearchedEvents != null) {
@@ -352,6 +357,9 @@ class _$GetSearchedEventsImpl implements _GetSearchedEvents {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetAllEvents value) getAllEvents,
     required TResult Function(_GetSearchedEvents value) getSearchedEvents,
+    required TResult Function(_LoadMoreAllEvents value) loadMoreAllEvents,
+    required TResult Function(_LoadMoreSearchedEvents value)
+        loadMoreSearchedEvents,
   }) {
     return getSearchedEvents(this);
   }
@@ -361,6 +369,8 @@ class _$GetSearchedEventsImpl implements _GetSearchedEvents {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetAllEvents value)? getAllEvents,
     TResult? Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult? Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult? Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
   }) {
     return getSearchedEvents?.call(this);
   }
@@ -370,6 +380,8 @@ class _$GetSearchedEventsImpl implements _GetSearchedEvents {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetAllEvents value)? getAllEvents,
     TResult Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
     required TResult orElse(),
   }) {
     if (getSearchedEvents != null) {
@@ -383,15 +395,254 @@ abstract class _GetSearchedEvents implements SearchEvent {
   const factory _GetSearchedEvents(final EventsRequestModel requestModel) =
       _$GetSearchedEventsImpl;
 
-  @override
   EventsRequestModel get requestModel;
 
   /// Create a copy of SearchEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetSearchedEventsImplCopyWith<_$GetSearchedEventsImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadMoreAllEventsImplCopyWith<$Res> {
+  factory _$$LoadMoreAllEventsImplCopyWith(_$LoadMoreAllEventsImpl value,
+          $Res Function(_$LoadMoreAllEventsImpl) then) =
+      __$$LoadMoreAllEventsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadMoreAllEventsImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$LoadMoreAllEventsImpl>
+    implements _$$LoadMoreAllEventsImplCopyWith<$Res> {
+  __$$LoadMoreAllEventsImplCopyWithImpl(_$LoadMoreAllEventsImpl _value,
+      $Res Function(_$LoadMoreAllEventsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SearchEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadMoreAllEventsImpl implements _LoadMoreAllEvents {
+  const _$LoadMoreAllEventsImpl();
+
+  @override
+  String toString() {
+    return 'SearchEvent.loadMoreAllEvents()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadMoreAllEventsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(EventsRequestModel requestModel) getAllEvents,
+    required TResult Function(EventsRequestModel requestModel)
+        getSearchedEvents,
+    required TResult Function() loadMoreAllEvents,
+    required TResult Function() loadMoreSearchedEvents,
+  }) {
+    return loadMoreAllEvents();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(EventsRequestModel requestModel)? getAllEvents,
+    TResult? Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult? Function()? loadMoreAllEvents,
+    TResult? Function()? loadMoreSearchedEvents,
+  }) {
+    return loadMoreAllEvents?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(EventsRequestModel requestModel)? getAllEvents,
+    TResult Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult Function()? loadMoreAllEvents,
+    TResult Function()? loadMoreSearchedEvents,
+    required TResult orElse(),
+  }) {
+    if (loadMoreAllEvents != null) {
+      return loadMoreAllEvents();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAllEvents value) getAllEvents,
+    required TResult Function(_GetSearchedEvents value) getSearchedEvents,
+    required TResult Function(_LoadMoreAllEvents value) loadMoreAllEvents,
+    required TResult Function(_LoadMoreSearchedEvents value)
+        loadMoreSearchedEvents,
+  }) {
+    return loadMoreAllEvents(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAllEvents value)? getAllEvents,
+    TResult? Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult? Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult? Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
+  }) {
+    return loadMoreAllEvents?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAllEvents value)? getAllEvents,
+    TResult Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
+    required TResult orElse(),
+  }) {
+    if (loadMoreAllEvents != null) {
+      return loadMoreAllEvents(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadMoreAllEvents implements SearchEvent {
+  const factory _LoadMoreAllEvents() = _$LoadMoreAllEventsImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadMoreSearchedEventsImplCopyWith<$Res> {
+  factory _$$LoadMoreSearchedEventsImplCopyWith(
+          _$LoadMoreSearchedEventsImpl value,
+          $Res Function(_$LoadMoreSearchedEventsImpl) then) =
+      __$$LoadMoreSearchedEventsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadMoreSearchedEventsImplCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$LoadMoreSearchedEventsImpl>
+    implements _$$LoadMoreSearchedEventsImplCopyWith<$Res> {
+  __$$LoadMoreSearchedEventsImplCopyWithImpl(
+      _$LoadMoreSearchedEventsImpl _value,
+      $Res Function(_$LoadMoreSearchedEventsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SearchEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadMoreSearchedEventsImpl implements _LoadMoreSearchedEvents {
+  const _$LoadMoreSearchedEventsImpl();
+
+  @override
+  String toString() {
+    return 'SearchEvent.loadMoreSearchedEvents()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadMoreSearchedEventsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(EventsRequestModel requestModel) getAllEvents,
+    required TResult Function(EventsRequestModel requestModel)
+        getSearchedEvents,
+    required TResult Function() loadMoreAllEvents,
+    required TResult Function() loadMoreSearchedEvents,
+  }) {
+    return loadMoreSearchedEvents();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(EventsRequestModel requestModel)? getAllEvents,
+    TResult? Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult? Function()? loadMoreAllEvents,
+    TResult? Function()? loadMoreSearchedEvents,
+  }) {
+    return loadMoreSearchedEvents?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(EventsRequestModel requestModel)? getAllEvents,
+    TResult Function(EventsRequestModel requestModel)? getSearchedEvents,
+    TResult Function()? loadMoreAllEvents,
+    TResult Function()? loadMoreSearchedEvents,
+    required TResult orElse(),
+  }) {
+    if (loadMoreSearchedEvents != null) {
+      return loadMoreSearchedEvents();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAllEvents value) getAllEvents,
+    required TResult Function(_GetSearchedEvents value) getSearchedEvents,
+    required TResult Function(_LoadMoreAllEvents value) loadMoreAllEvents,
+    required TResult Function(_LoadMoreSearchedEvents value)
+        loadMoreSearchedEvents,
+  }) {
+    return loadMoreSearchedEvents(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAllEvents value)? getAllEvents,
+    TResult? Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult? Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult? Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
+  }) {
+    return loadMoreSearchedEvents?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAllEvents value)? getAllEvents,
+    TResult Function(_GetSearchedEvents value)? getSearchedEvents,
+    TResult Function(_LoadMoreAllEvents value)? loadMoreAllEvents,
+    TResult Function(_LoadMoreSearchedEvents value)? loadMoreSearchedEvents,
+    required TResult orElse(),
+  }) {
+    if (loadMoreSearchedEvents != null) {
+      return loadMoreSearchedEvents(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadMoreSearchedEvents implements SearchEvent {
+  const factory _LoadMoreSearchedEvents() = _$LoadMoreSearchedEventsImpl;
 }
 
 /// @nodoc

@@ -11,15 +11,20 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-  //events ....................
+  //all events ....................
   @GET(ApiUrls.events)
   Future<ResultsModel> getAllEvents(@Query("client_id") String clientId,
-      @Query("client_secret") String clientSecret,@Query("per_page") int perPage);
+      @Query("client_secret") String clientSecret,
+      @Query("page") int page,
+      @Query("per_page") int perPage);
 
   //search ....................
   @GET(ApiUrls.events)
   Future<ResultsModel> getSearchedEvents(@Query("client_id") String clientId,
-      @Query("client_secret") String clientSecret,@Query("per_page") int perPage, @Query("q") String keyword);
+      @Query("client_secret") String clientSecret,
+      @Query("page") int page,
+      @Query("per_page") int perPage,
+      @Query("q") String keyword);
 
   //details..................
   @GET(ApiUrls.eventDetails)

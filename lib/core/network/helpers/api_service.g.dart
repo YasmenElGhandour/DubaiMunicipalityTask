@@ -25,12 +25,14 @@ class _ApiService implements ApiService {
   Future<ResultsModel> getAllEvents(
     String clientId,
     String clientSecret,
+    int page,
     int perPage,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'client_id': clientId,
       r'client_secret': clientSecret,
+      r'page': page,
       r'per_page': perPage,
     };
     final _headers = <String, dynamic>{};
@@ -66,6 +68,7 @@ class _ApiService implements ApiService {
   Future<ResultsModel> getSearchedEvents(
     String clientId,
     String clientSecret,
+    int page,
     int perPage,
     String keyword,
   ) async {
@@ -73,6 +76,7 @@ class _ApiService implements ApiService {
     final queryParameters = <String, dynamic>{
       r'client_id': clientId,
       r'client_secret': clientSecret,
+      r'page': page,
       r'per_page': perPage,
       r'q': keyword,
     };

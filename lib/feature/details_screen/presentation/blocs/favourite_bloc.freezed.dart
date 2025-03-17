@@ -20,32 +20,38 @@ mixin _$FavouriteEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int itemId) toggleFavorite,
+    required TResult Function(int itemId) checkFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int itemId)? toggleFavorite,
+    TResult? Function(int itemId)? checkFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int itemId)? toggleFavorite,
+    TResult Function(int itemId)? checkFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ToggleFavourite value) toggleFavorite,
+    required TResult Function(_CheckFavourite value) checkFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ToggleFavourite value)? toggleFavorite,
+    TResult? Function(_CheckFavourite value)? checkFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ToggleFavourite value)? toggleFavorite,
+    TResult Function(_CheckFavourite value)? checkFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,6 +170,7 @@ class _$ToggleFavouriteImpl implements _ToggleFavourite {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int itemId) toggleFavorite,
+    required TResult Function(int itemId) checkFavorite,
   }) {
     return toggleFavorite(itemId);
   }
@@ -172,6 +179,7 @@ class _$ToggleFavouriteImpl implements _ToggleFavourite {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int itemId)? toggleFavorite,
+    TResult? Function(int itemId)? checkFavorite,
   }) {
     return toggleFavorite?.call(itemId);
   }
@@ -180,6 +188,7 @@ class _$ToggleFavouriteImpl implements _ToggleFavourite {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int itemId)? toggleFavorite,
+    TResult Function(int itemId)? checkFavorite,
     required TResult orElse(),
   }) {
     if (toggleFavorite != null) {
@@ -192,6 +201,7 @@ class _$ToggleFavouriteImpl implements _ToggleFavourite {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ToggleFavourite value) toggleFavorite,
+    required TResult Function(_CheckFavourite value) checkFavorite,
   }) {
     return toggleFavorite(this);
   }
@@ -200,6 +210,7 @@ class _$ToggleFavouriteImpl implements _ToggleFavourite {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ToggleFavourite value)? toggleFavorite,
+    TResult? Function(_CheckFavourite value)? checkFavorite,
   }) {
     return toggleFavorite?.call(this);
   }
@@ -208,6 +219,7 @@ class _$ToggleFavouriteImpl implements _ToggleFavourite {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ToggleFavourite value)? toggleFavorite,
+    TResult Function(_CheckFavourite value)? checkFavorite,
     required TResult orElse(),
   }) {
     if (toggleFavorite != null) {
@@ -228,6 +240,151 @@ abstract class _ToggleFavourite implements FavouriteEvent {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ToggleFavouriteImplCopyWith<_$ToggleFavouriteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckFavouriteImplCopyWith<$Res>
+    implements $FavouriteEventCopyWith<$Res> {
+  factory _$$CheckFavouriteImplCopyWith(_$CheckFavouriteImpl value,
+          $Res Function(_$CheckFavouriteImpl) then) =
+      __$$CheckFavouriteImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int itemId});
+}
+
+/// @nodoc
+class __$$CheckFavouriteImplCopyWithImpl<$Res>
+    extends _$FavouriteEventCopyWithImpl<$Res, _$CheckFavouriteImpl>
+    implements _$$CheckFavouriteImplCopyWith<$Res> {
+  __$$CheckFavouriteImplCopyWithImpl(
+      _$CheckFavouriteImpl _value, $Res Function(_$CheckFavouriteImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FavouriteEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? itemId = null,
+  }) {
+    return _then(_$CheckFavouriteImpl(
+      null == itemId
+          ? _value.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckFavouriteImpl implements _CheckFavourite {
+  const _$CheckFavouriteImpl(this.itemId);
+
+  @override
+  final int itemId;
+
+  @override
+  String toString() {
+    return 'FavouriteEvent.checkFavorite(itemId: $itemId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckFavouriteImpl &&
+            (identical(other.itemId, itemId) || other.itemId == itemId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, itemId);
+
+  /// Create a copy of FavouriteEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckFavouriteImplCopyWith<_$CheckFavouriteImpl> get copyWith =>
+      __$$CheckFavouriteImplCopyWithImpl<_$CheckFavouriteImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int itemId) toggleFavorite,
+    required TResult Function(int itemId) checkFavorite,
+  }) {
+    return checkFavorite(itemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int itemId)? toggleFavorite,
+    TResult? Function(int itemId)? checkFavorite,
+  }) {
+    return checkFavorite?.call(itemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int itemId)? toggleFavorite,
+    TResult Function(int itemId)? checkFavorite,
+    required TResult orElse(),
+  }) {
+    if (checkFavorite != null) {
+      return checkFavorite(itemId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ToggleFavourite value) toggleFavorite,
+    required TResult Function(_CheckFavourite value) checkFavorite,
+  }) {
+    return checkFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ToggleFavourite value)? toggleFavorite,
+    TResult? Function(_CheckFavourite value)? checkFavorite,
+  }) {
+    return checkFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ToggleFavourite value)? toggleFavorite,
+    TResult Function(_CheckFavourite value)? checkFavorite,
+    required TResult orElse(),
+  }) {
+    if (checkFavorite != null) {
+      return checkFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckFavourite implements FavouriteEvent {
+  const factory _CheckFavourite(final int itemId) = _$CheckFavouriteImpl;
+
+  @override
+  int get itemId;
+
+  /// Create a copy of FavouriteEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CheckFavouriteImplCopyWith<_$CheckFavouriteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

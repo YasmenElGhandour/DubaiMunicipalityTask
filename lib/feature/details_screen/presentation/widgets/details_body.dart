@@ -20,36 +20,47 @@ class DetailsBody extends StatelessWidget {
       padding: EdgeInsets.all(16.0.sp),
       child: Column(
         children: [
-          DetailsAppBar(title : resultsModel?.events?[0].title ?? "", itemId: resultsModel?.events?[0].id ?? -1,),
-          SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 8.h,
-                ),
-                EventListDivider(),
-                SizedBox(
-                  height: 8.h,
-                ),
-                DetailsImg(imageUrl: resultsModel?.events?[0].performers?[0].images?.huge ?? "",),
-                SizedBox(
-                  height: 8.h,
-                ),
-                EventTitle(formatDateString( resultsModel?.events?[0].datetimeLocal ?? ""),
+          DetailsAppBar(
+            title: resultsModel?.events?[0].title ?? "",
+            itemId: resultsModel?.events?[0].id ?? -1,
+          ),
+          SizedBox(
+            height: 8.h,
+          ),
+          EventListDivider(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  DetailsImg(
+                    imageUrl: resultsModel?.events?[0].performers?[0].images?.huge ?? "",
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  EventTitle(
+                    formatDateString(resultsModel?.events?[0].datetimeLocal ?? ""),
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20.sp,
-                        color: ColorsPalette.BlackColor)),
-                SizedBox(
-                  height: 8.h,
-                ),
-                EventTitle("${resultsModel?.events?[0].venue?.displayLocation ?? ""}",
+                        color: ColorsPalette.BlackColor),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  EventTitle(
+                    "${resultsModel?.events?[0].venue?.displayLocation ?? ""}",
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
-                        color: ColorsPalette.DarkGrayColor)),
-              ],
+                        color: ColorsPalette.DarkGrayColor),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

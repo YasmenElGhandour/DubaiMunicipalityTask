@@ -5,7 +5,7 @@ It developed to interact with Seat Geek data, providing access to key informatio
 
 ## Features
 
-- Flutter Application: Implements clean and efficient Flutter code for mobile app development and Supports Android, iOS.
+- Flutter Application: Implements clean and efficient Flutter code for mobile app development and Supports Android, iOS , MacOs.
 - Seat Geek Data Access: Interact with and retrieve detailed information from the Seat Geek's API.
 - UI: The application is designed to be responsive and user-friendly across a wide range of devices.
 
@@ -15,7 +15,7 @@ The app allows you to:
 - See some events before search
 - Search for different events offered by the Seat Geek.
 - Clear or Cancel Search
-- View detailes information about event.
+- View details information about event.
 
 ## Built With
 

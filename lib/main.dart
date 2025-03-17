@@ -10,6 +10,7 @@ import 'feature/details_screen/presentation/blocs/favourite_bloc.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+  await Hive.openBox<int>(ConstantStrings.FAVOURITE_BOX);
   await dotenv.load(fileName: ".env");
   configureDependencies();
   runApp( const DubaiMunicipalityApp());

@@ -1,8 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../splash/presentation/widgets/splash_logo.dart';
 import 'event_placholder_image.dart';
 
 class EventListItemImg extends StatelessWidget {
@@ -14,8 +12,8 @@ class EventListItemImg extends StatelessWidget {
     return Container(
       decoration: new BoxDecoration(color: Colors.white),
       alignment: Alignment.center,
-      height: 70.w,
-      width: 70.w,
+      height: 90.w,
+      width: 90.w,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.w),
         child: CachedNetworkImage(

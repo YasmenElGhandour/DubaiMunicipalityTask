@@ -13,33 +13,26 @@ part 'favourite_bloc.freezed.dart';
 
 @Injectable()
 class FavouriteBloc extends Bloc<FavouriteEvent, FavouriteState> {
-  static const String _favouritesBoxName = ConstantStrings.FAVOURITE_BOX;
-  late Box<int> _favouritesBox;
+   Box<int> favouritesBox = Hive.box<int>(ConstantStrings.FAVOURITE_BOX);
 
   FavouriteBloc() : super(const FavouriteState.unfavorited()) {
-    _init();
     on<_ToggleFavourite>(_changeFavourite);
     on<_CheckFavourite>(_checkFavourite);
   }
 
-  Future<void> _init() async {
-    _favouritesBox = await Hive.openBox<int>(_favouritesBoxName);
-  }
 
   FutureOr<void> _changeFavourite(_ToggleFavourite event, Emitter<FavouriteState> emit) async {
-    await _init();
-    if (_favouritesBox.containsKey(event.itemId)) {
-      await _favouritesBox.delete(event.itemId);
+    if (favouritesBox.containsKey(event.itemId)) {
+      await favouritesBox.delete(event.itemId);
       emit(const FavouriteState.unfavorited());
     } else {
-      await _favouritesBox.put(event.itemId, event.itemId);
+      await favouritesBox.put(event.itemId, event.itemId);
       emit(const FavouriteState.favorited());
     }
   }
 
   FutureOr<void> _checkFavourite(_CheckFavourite event, Emitter<FavouriteState> emit) async {
-    await _init();
-    if (_favouritesBox.containsKey(event.itemId)) {
+    if (favouritesBox.containsKey(event.itemId)) {
       emit(const FavouriteState.favorited());
     } else {
       emit(const FavouriteState.unfavorited());

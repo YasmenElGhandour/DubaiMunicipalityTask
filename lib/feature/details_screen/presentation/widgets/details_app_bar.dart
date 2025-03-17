@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/theme/colors_palette.dart';
-import '../../../search_screen/presentation/widgets/events_list/event_list_fav_icon.dart';
 import '../../../search_screen/presentation/widgets/events_list/event_title.dart';
 import 'details_back_icon.dart';
+import 'details_fav_icon.dart';
 
 class DetailsAppBar extends StatelessWidget {
   const DetailsAppBar({super.key, required this.title, required this.itemId});
@@ -28,7 +27,7 @@ class DetailsAppBar extends StatelessWidget {
           ),
         ),
         SizedBox(width: 8.w,),
-        EventListFavIcon(itemId : itemId)
+        DetailsFavIcon(itemId : itemId)
       ],
     );
   }
